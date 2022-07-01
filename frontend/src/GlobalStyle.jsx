@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
   --darkColor: #0e1217;
   --white: rgb(245, 244, 242);
 }
-body{
+.body{
   display: flex;
   flex-wrap: wrap;
 }
