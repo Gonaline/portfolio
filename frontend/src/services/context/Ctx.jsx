@@ -6,22 +6,22 @@ const ctxProvider = createContext();
 export default ctxProvider;
 
 export function CtxProvider({ children }) {
-  const test = "aline";
   const [page, setPage] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/page"}`)
-      .then(([data]) => {
+      .get(`${import.meta.env.VITE_BACKEND_URL}${"/page/1"}`)
+      .then(({ data }) => {
         setPage(data);
       });
   }, []);
+
+  // const about = page.filter((element) => element.pageName === "about");
 
   return (
     <ctxProvider.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
-        test,
         page,
       }}
     >
