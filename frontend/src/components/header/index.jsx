@@ -15,6 +15,13 @@ export default function Header({ color }) {
           <Link to="/about" className="link" style={{ textDecoration: "none" }}>
             <li className="nav1li">ABOUT</li>
           </Link>
+          <Link
+            to="/project1"
+            className="link"
+            style={{ textDecoration: "none" }}
+          >
+            <li className="nav1li">PROJECTS</li>
+          </Link>
         </ul>
       </nav>
     </SHeader>
