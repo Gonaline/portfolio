@@ -3,11 +3,14 @@ import SLeft from "./style";
 
 export default function Left({ title, subTitle, description, textColor }) {
   return (
-    <SLeft>
-      <p>{title}</p>
-      <p>{subTitle}</p>
-      <p>{description}</p>
-      <p>{textColor}</p>
+    <SLeft color={textColor}>
+      <section className="text">
+        <div>
+          <p className="subTitle">{subTitle}</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </div>
+      </section>
     </SLeft>
   );
 }

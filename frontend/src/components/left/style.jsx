@@ -4,4 +4,31 @@ export default styled.section`
   background-color: var(--darkColor);
   width: 30vw;
   height: 75vh;
+  display: flex;
+  align-items: center;
+
+  .text {
+    height: 85vh;
+    margin: 0 10% 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  .subTitle {
+    color: var(--white-opacity);
+    margin-bottom: 2vh;
+  }
+  p {
+    color: var(--white);
+  }
+  h2 {
+    color: ${(props) => {
+      return `${props.color}`;
+    }};
+    margin-bottom: 6vh;
+  }
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
 `;
