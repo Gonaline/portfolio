@@ -27,9 +27,7 @@ export default styled.nav`
       text-decoration: none;
       font-size: 1.5rem;
       font-weight: bold;
-      box-shadow: rgba(0, 0, 0, 0.7) 0px 2px 4px,
-        rgba(0, 0, 0, 0.3) 0px 7px 7px -3px,
-        rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+      box-shadow: var(--box-shadow);
     }
     .linkActive {
       background-color: var(--activeLink);

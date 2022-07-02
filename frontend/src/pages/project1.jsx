@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { CtxProvider } from "@services/context/project1Ctx";
 import Project1 from "@components/project1";
 import Header from "@components/header";
 import Footer from "@components/footer";
@@ -25,12 +26,14 @@ export default function PageProject1() {
         description={page.description}
         textColor={page.colorLeftText}
       />
-      <Project1
-        color={page.colorRight}
-        title={page.title}
-        colorButton={page.colorButton}
-        colorHover={page.colorHover}
-      />
+      <CtxProvider>
+        <Project1
+          color={page.colorRight}
+          title={page.title}
+          colorButton={page.colorButton}
+          colorHover={page.colorHover}
+        />
+      </CtxProvider>
       <Footer color={page.colorHeader} />
     </section>
   );
