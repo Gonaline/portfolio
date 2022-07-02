@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
   --darkColor: #0e1217;
   --activeLink: #0e121754;
   --white: rgb(245, 244, 242);
+  --box-shadow: rgba(0, 0, 0, 0.7) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 7px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
 }
 .body{
   display: flex;

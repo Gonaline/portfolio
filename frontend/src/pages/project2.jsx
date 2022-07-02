@@ -29,6 +29,7 @@ export default function PageProject2() {
         color={page.colorRight}
         title={page.title}
         colorButton={page.colorButton}
+        colorHover={page.colorHover}
       />
       <Footer color={page.colorHeader} />
     </section>

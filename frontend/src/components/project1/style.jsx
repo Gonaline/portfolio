@@ -7,6 +7,7 @@ export default styled.section`
     return `${props.color}`;
   }};
   display: flex;
+  flex-wrap: wrap;
   @media screen and (max-width: 700px) {
     width: 100vw;
     min-height: 75vh;
