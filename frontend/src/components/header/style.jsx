@@ -4,12 +4,11 @@ export default styled.header`
   height: 15vh;
   width: 100vw;
   background: ${(props) => {
-    return `${props.color}`;
+    return `${props.backgroundColor}`;
   }};
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
   .link {
     text-decoration: none;
   }
@@ -30,15 +29,17 @@ export default styled.header`
   }
   .nav1 {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     margin-right: 3vw;
   }
-  .nav1li {
+  h3 {
+    text-align: center;
+    margin: 0 1vw 1.5vw 1vw;
     color: var(--white);
-    font-size: 2rem;
-    padding: 0 2vw;
-    padding-bottom: 1.5vh;
+  }
+  nav .link:hover {
+    border-bottom: var(--darkColor) 0.5vh solid;
   }
   @media screen and (max-width: 700px) {
     display: flex;

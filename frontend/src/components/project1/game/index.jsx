@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import context from "@services/context/project1Ctx";
-
 import SGame from "./style";
 
-export default function Game({ color, colorButton }) {
+export default function Game({ colorHover, colorButton }) {
   const game = ["rock", "paper", "scissors"];
-  const { setUserChoice } = useContext(context);
+  const { setUserChoice, setComputer } = useContext(context);
+
+  function computerAnswer() {
+    const number = Math.floor(Math.random() * 3);
+    return game[number];
+  }
   return (
-    <SGame color={color} buttonColor={colorButton}>
+    <SGame colorHover={colorHover} colorButton={colorButton}>
       <div className="userChoice">
         {game.map((choice) => (
           <button
@@ -17,6 +21,7 @@ export default function Game({ color, colorButton }) {
             value={choice}
             onClick={() => {
               setUserChoice(choice);
+              setComputer(computerAnswer);
             }}
           >
             <img
@@ -36,6 +41,6 @@ export default function Game({ color, colorButton }) {
 }
 
 Game.propTypes = {
-  color: PropTypes.string.isRequired,
+  colorHover: PropTypes.string.isRequired,
   colorButton: PropTypes.string.isRequired,
 };

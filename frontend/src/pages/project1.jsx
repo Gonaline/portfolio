@@ -19,7 +19,7 @@ export default function PageProject1() {
 
   return (
     <section className="body">
-      <Header color={page.colorHeader} />
+      <Header backgroundColor={page.colorHeader} />
       <Left
         title={page.title}
         subtitle={page.subtitle}
@@ -28,13 +28,13 @@ export default function PageProject1() {
       />
       <CtxProvider>
         <Project1
-          color={page.colorRight}
+          colorRight={page.colorRight}
           title={page.title}
           colorButton={page.colorButton}
           colorHover={page.colorHover}
         />
       </CtxProvider>
-      <Footer color={page.colorHeader} />
+      <Footer backgroundColor={page.colorHeader} />
     </section>
   );
 }
