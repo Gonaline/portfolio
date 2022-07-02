@@ -3,9 +3,9 @@ import linkedinImg from "@assets/pictures/linkedin-icon.svg";
 import githubImg from "@assets/pictures/github-icon.svg";
 import SFooter from "./style";
 
-export default function Footer({ color }) {
+export default function Footer({ backgroundColor }) {
   return (
-    <SFooter color={color}>
+    <SFooter backgroundColor={backgroundColor}>
       <div className="color" />
       <div className="icons">
         <a
@@ -29,5 +29,5 @@ export default function Footer({ color }) {
   );
 }
 Footer.propTypes = {
-  color: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
 };

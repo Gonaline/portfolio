@@ -4,7 +4,7 @@ export default styled.section`
   width: 70vw;
   height: 75vh;
   background: ${(props) => {
-    return `${props.color}`;
+    return `${props.backgroundColor}`;
   }};
   display: flex;
   flex-wrap: wrap;

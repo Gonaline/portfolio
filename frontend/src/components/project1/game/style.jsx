@@ -18,8 +18,8 @@ export default styled.section`
     margin: 0 4vw 0 4vw;
     border: none;
     border-radius: 1vw;
-    background-color: ${(props) => {
-      return `${props.buttonColor}`;
+    background: ${(props) => {
+      return `${props.colorButton}`;
     }};
     display: flex;
     align-items: center;
@@ -31,14 +31,16 @@ export default styled.section`
   }
   button:hover {
     background-color: ${(props) => {
-      return `${props.color}`;
+      return `${props.colorHover}`;
     }};
-    -ms-transform: scale(1.3); /* IE 9 */
-    -webkit-transform: scale(1.3); /* Safari 3-8 */
-    transform: rotate(20deg) scale(1.3);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: rotate(20deg) scale(1.1);
   }
   button:active {
-    background-color: var(--orange);
+    background-color: ${(props) => {
+      return `${props.colorHover}`;
+    }};
   }
   .text {
     display: flex;

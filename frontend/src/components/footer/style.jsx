@@ -4,7 +4,7 @@ export default styled.footer`
   height: 10vh;
   width: 100vw;
   background: ${(props) => {
-    return `${props.color}`;
+    return `${props.backgroundColor}`;
   }};
   display: flex;
   .color {
