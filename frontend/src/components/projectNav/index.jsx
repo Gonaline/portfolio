@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SProjectNav from "./style";
 
-export default function Nav({ color }) {
+export default function Nav({ color, colorHover }) {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -16,20 +16,22 @@ export default function Nav({ color }) {
   }, []);
 
   return (
-    <SProjectNav color={color}>
+    <SProjectNav color={color} colorHover={colorHover}>
       <ul>
         {projects
           .filter((project) => project.id.substr(0, 7) === "project")
           .map((project) => {
             return (
               <li key={project.id}>
-                <Link
-                  className="link"
-                  style={{ textDecoration: "none" }}
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "link linkActive" : "link"
+                  }
+                  // style={{ textDecoration: "none" }}
                   to={`/${project.id}`}
                 >
                   {project.projectNumber}
-                </Link>
+                </NavLink>
               </li>
             );
           })}
@@ -40,4 +42,5 @@ export default function Nav({ color }) {
 
 Nav.propTypes = {
   color: PropTypes.string.isRequired,
+  colorHover: PropTypes.string.isRequired,
 };
