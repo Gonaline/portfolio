@@ -6,14 +6,9 @@ export default styled.section`
   height: 75vh;
   display: flex;
   align-items: center;
-
-  .text {
-    height: 85vh;
+  p,
+  h2 {
     margin: 0 10% 0 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
   }
   .subTitle {
     color: var(--white-opacity);

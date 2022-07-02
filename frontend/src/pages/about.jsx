@@ -7,27 +7,31 @@ import Left from "@components/left";
 import About from "@components/about";
 
 export default function PageAbout() {
-  const [pageAbout, setPageAbout] = useState([]);
+  const [page, setPage] = useState([]);
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}${"/page/about"}`)
       .then(({ data }) => {
-        setPageAbout(data);
+        setPage(data);
       });
   }, []);
 
   return (
     <section className="body">
-      <Header />
+      <Header color={page.colorHeader} />
       <Left
-        title={pageAbout.title}
-        subtitle={pageAbout.subtitle}
-        description={pageAbout.description}
-        textColor={pageAbout.colorRight}
+        title={page.title}
+        subtitle={page.subtitle}
+        description={page.description}
+        textColor={page.colorLeftText}
       />
-      <About />
-      <Footer />
+      <About
+        color={page.colorRight}
+        title={page.title}
+        colorButton={page.colorButton}
+      />
+      <Footer color={page.colorHeader} />
     </section>
   );
 }

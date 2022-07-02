@@ -3,5 +3,11 @@ import styled from "styled-components";
 export default styled.section`
   width: 70vw;
   height: 75vh;
-  background-color: yellow;
+  background: ${(props) => {
+    return `${props.color}`;
+  }};
+  @media screen and (max-width: 700px) {
+    width: 100vw;
+    min-height: 75vh;
+  }
 `;
