@@ -11,42 +11,40 @@ function Result({ otherColor, colorHover, message, userPoint, computerPoint }) {
 
   return (
     <SResult colorHover={colorHover} otherColor={otherColor}>
-      <div>
-        <div className="result">
-          {userPoint === 0 ? (
-            <div className="onePoint none" />
-          ) : (
-            <div className="onePoint userWin">
-              <p>+1</p>
-            </div>
-          )}
-          <div
-            className={`user choice ${
-              userPoint === 0 && computerPoint === 1 ? "delete" : ""
-            } 
-            `}
-          >
-            <img src={imgUser} alt={imgUser} />
+      <div className="result">
+        {userPoint === 0 ? (
+          <div className="onePoint none" />
+        ) : (
+          <div className="onePoint userWin">
+            <p>+1</p>
           </div>
-          <div
-            className={`computer choice ${
-              userPoint === 1 && computerPoint === 0 ? "delete" : ""
-            } 
+        )}
+        <div
+          className={`user choice ${
+            userPoint === 0 && computerPoint === 1 ? "delete" : ""
+          } 
             `}
-          >
-            <img src={imgComputer} alt={imgComputer} />
+        >
+          <img src={imgUser} alt={imgUser} />
+        </div>
+        <div
+          className={`computer choice ${
+            userPoint === 1 && computerPoint === 0 ? "delete" : ""
+          } 
+            `}
+        >
+          <img src={imgComputer} alt={imgComputer} />
+        </div>
+        {computerPoint === 0 ? (
+          <div className="onePoint none" />
+        ) : (
+          <div className="onePoint computerWin">
+            <p>+1</p>
           </div>
-          {computerPoint === 0 ? (
-            <div className="onePoint none" />
-          ) : (
-            <div className="onePoint computerWin">
-              <p>+1</p>
-            </div>
-          )}
-        </div>
-        <div className="message">
-          <h3>{message}</h3>
-        </div>
+        )}
+      </div>
+      <div className="message">
+        <h3>{message}</h3>
       </div>
     </SResult>
   );

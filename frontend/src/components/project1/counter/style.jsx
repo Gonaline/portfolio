@@ -39,4 +39,32 @@ export default styled.div`
     margin: 0px 10px 0 10px;
     font-size: 2em;
   }
+  @media screen and (max-width: 700px) {
+    height: 8vh;
+    width: 100vw;
+    .you,
+    .computer {
+      width: 50%;
+      flex-direction: column;
+    }
+    .you {
+      flex-direction: column-reverse;
+      margin-right: 1vw;
+      align-items: flex-end;
+    }
+
+    .computer {
+      margin-left: 1vw;
+      align-items: flex-start;
+    }
+    .points {
+      width: 15vw;
+      aspect-ratio: 4/1;
+      color: var(--white);
+    }
+    h4 {
+      margin: 0;
+      font-size: 2em;
+    }
+  }
 `;

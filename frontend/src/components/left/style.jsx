@@ -11,8 +11,8 @@ export default styled.section`
     margin: 0 10% 0 10%;
   }
   .subTitle {
-    color: var(--white-opacity);
     margin-bottom: 2vh;
+    opacity: 0.5;
   }
   p {
     color: var(--white);

@@ -46,4 +46,7 @@ export default styled.nav`
       transform: none;
     }
   }
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
 `;

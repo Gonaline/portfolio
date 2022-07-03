@@ -4,11 +4,12 @@ export default styled.section`
   height: 46vh;
   width: 55vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   .result {
-    height: 36vh;
+    height: 35vh;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -82,6 +83,9 @@ export default styled.section`
   .computer {
     height: 35vh;
     aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
       height: 35vh;
       aspect-ratio: 1/1;
@@ -113,5 +117,51 @@ export default styled.section`
   }
   h3 {
     font-weight: bold;
+  }
+  @media screen and (max-width: 700px) {
+    height: 30vh;
+    width: 100vw;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+
+    .result {
+      height: 18vh;
+      width: 100%;
+      justify-content: center;
+    }
+    .onePoint {
+      height: 3vh;
+      aspect-ratio: 1.5/1;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    .user,
+    .computer {
+      height: 35vw;
+      width: 35vw;
+      aspect-ratio: 1/1;
+      img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+      }
+    }
+    .message {
+      height: 10vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h3 {
+      font-size: 2em;
+    }
   }
 `;
