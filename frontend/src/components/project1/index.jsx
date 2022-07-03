@@ -7,6 +7,7 @@ import Nav from "@components/projectNav";
 import Game from "./game";
 import Result from "./result";
 import Counter from "./counter";
+import Replay from "./replay";
 import SProject1 from "./style";
 
 export default function Project1({
@@ -16,7 +17,6 @@ export default function Project1({
   colorHover,
 }) {
   const { userChoice, computer } = useContext(context);
-
   const [message, setMessage] = useState("");
   const [userPoint, setUserPoint] = useState(0);
   const [computerPoint, setComputerPoint] = useState(0);
@@ -57,6 +57,7 @@ export default function Project1({
               userPoint={userPoint}
               computerPoint={computerPoint}
             />
+            <Replay />
           </div>
         </section>
       )}
