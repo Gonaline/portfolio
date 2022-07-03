@@ -1,4 +1,4 @@
-import dataProject1 from "@assets/data/project1";
+// import dataProject1 from "@assets/data/project1";
 import { createContext, useState } from "react";
 import PropTypes from "prop-types";
 
@@ -9,12 +9,6 @@ export function CtxProvider({ children }) {
   const [userChoice, setUserChoice] = useState("");
   const [computer, setComputer] = useState("");
 
-  function searchIndex() {
-    return dataProject1.findIndex(
-      (element) => element.id === userChoice + computer
-    );
-  }
-
   return (
     <context.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
@@ -23,7 +17,6 @@ export function CtxProvider({ children }) {
         setUserChoice,
         computer,
         setComputer,
-        searchIndex,
       }}
     >
       {children}

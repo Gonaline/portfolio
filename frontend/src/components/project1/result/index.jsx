@@ -1,15 +1,10 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
-import dataProject1 from "@assets/data/project1";
 import context from "@services/context/project1Ctx";
 import SResult from "./style";
 
-function Result({ color, colorHover }) {
-  const { userChoice, computer, searchIndex } = useContext(context);
-
-  const { message } = dataProject1[searchIndex()];
-  const { userPoint } = dataProject1[searchIndex()];
-  const { computerPoint } = dataProject1[searchIndex()];
+function Result({ color, colorHover, message, userPoint, computerPoint }) {
+  const { userChoice, computer } = useContext(context);
 
   const imgUser = `./src/assets/pictures/project1/${userChoice}.png`;
   const imgComputer = `./src/assets/pictures/project1/${computer}.png`;
@@ -62,4 +57,7 @@ export default Result;
 Result.propTypes = {
   color: PropTypes.string.isRequired,
   colorHover: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  userPoint: PropTypes.number.isRequired,
+  computerPoint: PropTypes.number.isRequired,
 };
