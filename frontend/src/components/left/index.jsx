@@ -3,7 +3,7 @@ import SLeft from "./style";
 
 export default function Left({ title, subTitle, description, textColor }) {
   return (
-    <SLeft color={textColor}>
+    <SLeft textColor={textColor}>
       <div>
         <p className="subTitle">{subTitle}</p>
         <h2>{title}</h2>

@@ -3,14 +3,14 @@ import { useContext } from "react";
 import context from "@services/context/project1Ctx";
 import SResult from "./style";
 
-function Result({ color, colorHover, message, userPoint, computerPoint }) {
+function Result({ otherColor, colorHover, message, userPoint, computerPoint }) {
   const { userChoice, computer } = useContext(context);
 
   const imgUser = `./src/assets/pictures/project1/${userChoice}.png`;
   const imgComputer = `./src/assets/pictures/project1/${computer}.png`;
 
   return (
-    <SResult colorHover={colorHover} colorButton={color}>
+    <SResult colorHover={colorHover} otherColor={otherColor}>
       <div>
         <div className="result">
           {userPoint === 0 ? (
@@ -55,7 +55,7 @@ function Result({ color, colorHover, message, userPoint, computerPoint }) {
 export default Result;
 
 Result.propTypes = {
-  color: PropTypes.string.isRequired,
+  otherColor: PropTypes.string.isRequired,
   colorHover: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
   userPoint: PropTypes.number.isRequired,

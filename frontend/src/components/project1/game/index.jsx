@@ -3,7 +3,7 @@ import { useContext } from "react";
 import context from "@services/context/project1Ctx";
 import SGame from "./style";
 
-export default function Game({ colorHover, colorButton }) {
+export default function Game({ color, colorHover }) {
   const game = ["rock", "paper", "scissors"];
   const { setUserChoice, setComputer } = useContext(context);
 
@@ -12,7 +12,7 @@ export default function Game({ colorHover, colorButton }) {
     return game[number];
   }
   return (
-    <SGame colorHover={colorHover} colorButton={colorButton}>
+    <SGame colorHover={colorHover} color={color}>
       <div className="userChoice">
         {game.map((choice) => (
           <button
@@ -42,5 +42,5 @@ export default function Game({ colorHover, colorButton }) {
 
 Game.propTypes = {
   colorHover: PropTypes.string.isRequired,
-  colorButton: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
 };

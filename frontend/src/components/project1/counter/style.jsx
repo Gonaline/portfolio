@@ -24,10 +24,10 @@ export default styled.div`
   }
   .points {
     width: 5vw;
-    height: 4vh;
-    border-radius: 5px;
+    aspect-ratio: 2/1;
+    border-radius: var(--border-radius);
     background-color: ${(props) => {
-      return `${props.colorButton}`;
+      return `${props.color}`;
     }};
     color: var(--white);
     display: flex;

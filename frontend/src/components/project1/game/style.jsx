@@ -17,9 +17,9 @@ export default styled.section`
     aspect-ratio: 1/1;
     margin: 0 4vw 0 4vw;
     border: none;
-    border-radius: 1vw;
+    border-radius: var(--border-radius);
     background: ${(props) => {
-      return `${props.colorButton}`;
+      return `${props.color}`;
     }};
     display: flex;
     align-items: center;

@@ -19,7 +19,7 @@ export default styled.nav`
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 5px;
+      border-radius: var(--border-radius);
       height: 5vh;
       aspect-ratio: 1/1;
       margin: 0 0.8vw;

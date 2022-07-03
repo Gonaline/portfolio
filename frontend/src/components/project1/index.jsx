@@ -11,10 +11,11 @@ import Replay from "./replay";
 import SProject1 from "./style";
 
 export default function Project1({
-  colorRight,
+  color,
+  backgroundColor,
+  otherColor,
+  flashColor,
   title,
-  colorButton,
-  colorHover,
 }) {
   const { userChoice, computer } = useContext(context);
   const [message, setMessage] = useState("");
@@ -36,28 +37,27 @@ export default function Project1({
   }, [userChoice]);
 
   return (
-    <SProject1 backgroundColor={colorRight}>
+    <SProject1 backgroundColor={backgroundColor}>
       <Title title={title} />
-      <Nav color={colorButton} colorHover={colorHover} />
+      <Nav color={flashColor} colorHover={color} />
       {!userChoice ? (
-        <Game colorButton={colorButton} colorHover={colorHover} />
+        <Game color={otherColor} colorHover={color} />
       ) : (
         <section className="right">
           <Counter
-            color={colorButton}
-            colorHover={colorHover}
+            color={color}
             userCounter={userCounter}
             computerCounter={computerCounter}
           />
           <div className="bottom">
             <Result
-              color={colorButton}
-              colorHover={colorHover}
+              otherColor={otherColor}
+              colorHover={flashColor}
               message={message}
               userPoint={userPoint}
               computerPoint={computerPoint}
             />
-            <Replay />
+            <Replay color={flashColor} />
           </div>
         </section>
       )}
@@ -66,8 +66,9 @@ export default function Project1({
 }
 
 Project1.propTypes = {
-  colorRight: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  colorButton: PropTypes.string.isRequired,
-  colorHover: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  otherColor: PropTypes.string.isRequired,
+  flashColor: PropTypes.string.isRequired,
 };

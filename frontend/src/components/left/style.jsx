@@ -19,7 +19,7 @@ export default styled.section`
   }
   h2 {
     color: ${(props) => {
-      return `${props.color}`;
+      return `${props.textColor}`;
     }};
     margin-bottom: 6vh;
   }

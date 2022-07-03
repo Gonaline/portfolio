@@ -8,6 +8,11 @@ export default styled.section`
   }};
   display: flex;
   flex-wrap: wrap;
+  .bottom {
+    display: flex;
+    flex-direction: center;
+    align-items: flex-end;
+  }
   @media screen and (max-width: 700px) {
     width: 100vw;
     min-height: 75vh;

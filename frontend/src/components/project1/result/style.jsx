@@ -15,16 +15,16 @@ export default styled.section`
   }
   .choice {
     margin: 0 1vw 0 1vw;
-    border-radius: 1vw;
+    border-radius: var(--border-radius);
     background-color: ${(props) => {
-      return `${props.colorButton}`;
+      return `${props.otherColor}`;
     }};
   }
   .onePoint {
     height: 4vh;
     aspect-ratio: 1.5/1;
     margin: auto;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     display: flex;
     justify-content: center;
     align-items: center;

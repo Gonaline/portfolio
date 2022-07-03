@@ -27,7 +27,6 @@ export default function Nav({ color, colorHover }) {
                   className={({ isActive }) =>
                     isActive ? "link linkActive" : "link"
                   }
-                  // style={{ textDecoration: "none" }}
                   to={`/${project.id}`}
                 >
                   {project.projectNumber}
