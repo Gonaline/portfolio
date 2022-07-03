@@ -22,7 +22,7 @@ function Result({ color, colorHover, message, userPoint, computerPoint }) {
           )}
           <div
             className={`user choice ${
-              userPoint === 0 || computer === 1 ? "delete" : ""
+              userPoint === 0 && computerPoint === 1 ? "delete" : ""
             } 
             `}
           >
@@ -30,7 +30,7 @@ function Result({ color, colorHover, message, userPoint, computerPoint }) {
           </div>
           <div
             className={`computer choice ${
-              userPoint === 1 || computer === 0 ? "delete" : ""
+              userPoint === 1 && computerPoint === 0 ? "delete" : ""
             } 
             `}
           >
