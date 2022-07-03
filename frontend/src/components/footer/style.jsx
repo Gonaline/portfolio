@@ -15,6 +15,7 @@ export default styled.footer`
   .icons {
     display: flex;
     align-items: center;
+    margin-left: 1vw;
   }
   .icon {
     margin-left: 1vw;
@@ -28,6 +29,12 @@ export default styled.footer`
     background-size: contain;
   }
   @media screen and (max-width: 700px) {
+    .icons {
+      margin-left: 3vw;
+    }
+    .icon {
+      margin-left: 2vw;
+    }
     .color {
       display: none;
     }

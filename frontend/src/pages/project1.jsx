@@ -19,22 +19,23 @@ export default function PageProject1() {
 
   return (
     <section className="body">
-      <Header backgroundColor={page.colorHeader} />
+      <Header backgroundColor={page.color1} />
       <Left
         title={page.title}
         subtitle={page.subtitle}
         description={page.description}
-        textColor={page.colorLeftText}
+        textColor={page.color1}
       />
       <CtxProvider>
         <Project1
-          colorRight={page.colorRight}
+          color={page.color1}
+          backgroundColor={page.color2}
+          otherColor={page.color3}
+          flashColor={page.color4}
           title={page.title}
-          colorButton={page.colorButton}
-          colorHover={page.colorHover}
         />
       </CtxProvider>
-      <Footer backgroundColor={page.colorHeader} />
+      <Footer backgroundColor={page.color1} />
     </section>
   );
 }

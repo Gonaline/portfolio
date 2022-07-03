@@ -19,19 +19,19 @@ export default function PageAbout() {
 
   return (
     <section className="body">
-      <Header color={page.colorHeader} />
+      <Header backgroundColor={page.color1} />
       <Left
         title={page.title}
         subtitle={page.subtitle}
         description={page.description}
-        textColor={page.colorLeftText}
+        textColor={page.color1}
       />
       <About
-        color={page.colorRight}
+        backgroundColor={page.color2}
         title={page.title}
         colorButton={page.colorButton}
       />
-      <Footer color={page.colorHeader} />
+      <Footer backgroundColor={page.color1} />
     </section>
   );
 }

@@ -1,16 +1,15 @@
 import PropTypes from "prop-types";
 import SAbout from "./style";
 
-export default function About({ color, title, colorButton }) {
+export default function About({ backgroundColor, title }) {
   return (
-    <SAbout color={color} colorButton={colorButton}>
+    <SAbout backgroundColor={backgroundColor}>
       <p>{title}</p>
     </SAbout>
   );
 }
 
 About.propTypes = {
-  color: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  colorButton: PropTypes.string.isRequired,
 };
