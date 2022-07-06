@@ -42,24 +42,6 @@ export default styled.header`
     border-bottom: var(--darkColor) 0.5vh solid;
   }
   @media screen and (max-width: 700px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    .me {
-      height: 15vh;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      h1 {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-        padding-bottom: 0;
-      }
-    }
-    nav {
-      display: none;
-    }
+    display: none;
   }
 `;
