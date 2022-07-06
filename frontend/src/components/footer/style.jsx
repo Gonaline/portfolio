@@ -29,11 +29,10 @@ export default styled.footer`
     background-size: contain;
   }
   @media screen and (max-width: 700px) {
-    .icons {
-      margin-left: 3vw;
-    }
+    display: flex;
+    justify-content: left;
     .icon {
-      margin-left: 2vw;
+      margin-left: 4vw;
     }
     .color {
       display: none;

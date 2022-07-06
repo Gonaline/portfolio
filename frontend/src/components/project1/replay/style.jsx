@@ -30,10 +30,14 @@ export default styled.div`
 
   @media screen and (max-width: 700px) {
     width: 25vw;
-    border: 0;
-    line-height: 2.5;
-    padding: 0 1vw;
-    font-size: 1.2rem;
-    margin-right: 5vw;
+
+    button {
+      width: 25vw;
+      border: 0;
+      line-height: 2.5;
+      padding: 0 1vw;
+      font-size: 1.2rem;
+      margin-right: 5vw;
+    }
   }
 `;
