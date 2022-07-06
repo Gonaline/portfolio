@@ -5,7 +5,7 @@ import SBurger from "./style";
 
 export default function Burger({ ...props }) {
   return (
-    <SBurger isOpen={props.burger} onClick={props.func}>
+    <SBurger isOpen={props.burger} onClick={props.func} color={props.color}>
       <img className="choice" src={Logo} alt="logo" />
 
       <div className="hamburger">
@@ -16,7 +16,7 @@ export default function Burger({ ...props }) {
 
       <div className="Nav">
         <ul>
-          <li className="first">
+          <li>
             <Link className="link" to="/about">
               ABOUT
             </Link>
@@ -39,6 +39,7 @@ export default function Burger({ ...props }) {
 Burger.propTypes = {
   burger: PropTypes.bool,
   func: PropTypes.func,
+  color: PropTypes.string.isRequired,
 };
 Burger.defaultProps = {
   burger: false,

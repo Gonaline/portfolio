@@ -29,7 +29,7 @@ export default function Header({ backgroundColor }) {
           </div>
         </nav>
       </SHeader>
-      <Burger burger={burgerOpen} func={toggleBurger} />
+      <Burger burger={burgerOpen} func={toggleBurger} color={backgroundColor} />
     </>
   );
 }

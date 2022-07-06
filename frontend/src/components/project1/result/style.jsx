@@ -99,6 +99,7 @@ export default styled.section`
   .message {
     height: 10vh;
     display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;

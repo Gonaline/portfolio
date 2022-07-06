@@ -8,6 +8,8 @@ export default styled.section`
   }};
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   .bottom {
     display: flex;
     justify-content: center;
@@ -21,7 +23,7 @@ export default styled.section`
     .bottom {
       justify-content: flex-start;
       flex-direction: column;
-      align-items: right;
+      align-items: center;
       margin-bottom: 15vh;
     }
   }

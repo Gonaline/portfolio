@@ -5,7 +5,7 @@ export default styled.nav`
   font-size: 1.2rem;
   background-color: var(--darkColor);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: left;
   padding-left: 5vw;
@@ -19,15 +19,15 @@ export default styled.nav`
 
   li {
     color: var(--white);
-    /* margin-top: 0.5vh;
-    padding-top: 3vh; */
-
+    margin-top: 0.7vh;
+    padding-right: 5vw;
+    /* padding-top: 3vh; */
+    display: flex;
+    justify-content: right;
+    align-items: center;
     height: 15vw;
     width: 100vw;
-    background-color: #ffffff17;
-  }
-  .first {
-    /* margin-top: 10vh; */
+    background-color: #ffffff13;
   }
   a {
     text-decoration: none;
@@ -52,9 +52,6 @@ export default styled.nav`
     transform-origin: 1px;
     transition: all 0.3s linear;
   }
-  /* details[open] summary ~ * {
-    animation: 0.5s ease-out;
-  } */
   .burger1 {
     transform: ${(props) => (props.isOpen ? "rotate(45deg)" : "rotate(0)")};
   }
@@ -78,13 +75,13 @@ export default styled.nav`
     width: 20vw;
     aspect-ratio: 1/1;
     object-fit: contain;
-    background-color: #7ecea9;
+    background: ${(props) => {
+      return `${props.color}`;
+    }};
     border-radius: 5vh;
     margin: 2vh 0;
   }
   @media screen and (min-width: 700px) {
-    .hamburger {
-      display: none;
-    }
+    display: none;
   }
 `;

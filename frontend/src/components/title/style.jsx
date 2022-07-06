@@ -14,10 +14,10 @@ export default styled.div`
     justify-content: flex-start
     margin: auto;
     width: 100%;
-
+    margin-bottom: 3vh;
     h2 {
       text-align: center;
-      padding: 0 20vw;
+      padding: 0;
       font-size: 2.5em;
     }
   }
