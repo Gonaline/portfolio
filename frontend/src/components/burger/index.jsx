@@ -1,11 +1,15 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import Ctx from "@services/context/Ctx";
 import { Link } from "react-router-dom";
 import Logo from "@assets/pictures/project1/rock.png";
 import SBurger from "./style";
 
 export default function Burger({ ...props }) {
+  const { burgerOpen, toggleBurger } = useContext(Ctx);
+
   return (
-    <SBurger isOpen={props.burger} onClick={props.func} color={props.color}>
+    <SBurger isOpen={burgerOpen} onClick={toggleBurger} color={props.color}>
       <img className="choice" src={Logo} alt="logo" />
 
       <div className="hamburger">

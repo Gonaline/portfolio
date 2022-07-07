@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 import PropTypes from "prop-types";
 
-const context = createContext();
-export default context;
+const project1Ctx = createContext();
+export default project1Ctx;
 
 export function CtxProvider({ children }) {
   const [userChoice, setUserChoice] = useState("");
@@ -13,7 +13,7 @@ export function CtxProvider({ children }) {
     setComputer("");
   };
   return (
-    <context.Provider
+    <project1Ctx.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         userChoice,
@@ -24,7 +24,7 @@ export function CtxProvider({ children }) {
       }}
     >
       {children}
-    </context.Provider>
+    </project1Ctx.Provider>
   );
 }
 

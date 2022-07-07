@@ -1,15 +1,9 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Burger from "@components/burger";
 import SHeader from "./style";
 
 export default function Header({ backgroundColor }) {
-  const [burgerOpen, setBurgerOpen] = useState("red");
-  const toggleBurger = () => {
-    setBurgerOpen(!burgerOpen);
-  };
-
   return (
     <>
       <SHeader backgroundColor={backgroundColor}>
@@ -29,7 +23,7 @@ export default function Header({ backgroundColor }) {
           </div>
         </nav>
       </SHeader>
-      <Burger burger={burgerOpen} func={toggleBurger} color={backgroundColor} />
+      <Burger color={backgroundColor} />
     </>
   );
 }

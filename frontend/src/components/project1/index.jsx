@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useContext, useState, useEffect } from "react";
-import context from "@services/context/project1Ctx";
+import project1Ctx from "@services/context/project1Ctx";
 import dataProject1 from "@assets/data/project1";
 import Title from "@components/title";
 import Nav from "@components/projectNav";
@@ -17,7 +17,7 @@ export default function Project1({
   flashColor,
   title,
 }) {
-  const { userChoice, computer } = useContext(context);
+  const { userChoice, computer } = useContext(project1Ctx);
   const [message, setMessage] = useState("");
   const [userPoint, setUserPoint] = useState(0);
   const [computerPoint, setComputerPoint] = useState(0);
