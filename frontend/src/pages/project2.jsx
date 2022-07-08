@@ -10,7 +10,7 @@ export default function PageProject2() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/page/project2"}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}${"/page/project5"}`)
       .then(({ data }) => {
         setPage(data);
       });
@@ -18,20 +18,21 @@ export default function PageProject2() {
 
   return (
     <section className="body">
-      <Header color={page.colorHeader} />
+      <Header backgroundColor={page.color1} />
       <Left
         title={page.title}
         subtitle={page.subtitle}
         description={page.description}
-        textColor={page.colorLeftText}
+        textColor={page.color1}
       />
       <Project2
-        color={page.colorRight}
+        color={page.color1}
+        backgroundColor={page.color2}
+        otherColor={page.color3}
+        flashColor={page.color4}
         title={page.title}
-        colorButton={page.colorButton}
-        colorHover={page.colorHover}
       />
-      <Footer color={page.colorHeader} />
+      <Footer backgroundColor={page.color1} />
     </section>
   );
 }
