@@ -4,18 +4,12 @@ export default styled.section`
   width: 70vw;
   height: 75vh;
   margin: auto;
-  /* background: ${(props) => {
-    return `${props.backgroundColor}`;
-  }}; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-items: center; */
   .container {
     display: flex;
     width: 100%;
-    /* padding: 2vh; */
-    /* box-sizing: border-box; */
     height: 100%;
   }
   .box {
@@ -63,8 +57,27 @@ export default styled.section`
 
   @media screen and (max-width: 700px) {
     width: 100vw;
-    min-height: 75vh;
-    margin: auto;
-    align-items: flex-start;
+    section {
+      width: 100vw;
+    }
+    .container {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 30%;
+    }
+    /* img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    } */
+    .box > img {
+      width: 100%;
+      height: 10vh;
+      object-fit: cover;
+    }
+    .box:hover {
+      flex: 1 1 100%;
+    }
   }
 `;
