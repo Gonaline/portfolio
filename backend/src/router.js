@@ -3,6 +3,7 @@ const express = require("express");
 const {
   ItemController,
   Project1Controller,
+  Project2Controller,
   PageController,
 } = require("./controllers");
 
@@ -19,6 +20,12 @@ router.get("/project1/:id", Project1Controller.read);
 router.put("/project1/:id", Project1Controller.edit);
 router.post("/project1", Project1Controller.add);
 router.delete("/project1/:id", Project1Controller.delete);
+
+router.get("/project2", Project2Controller.browse);
+router.get("/project2/:id", Project2Controller.read);
+router.put("/project2/:id", Project2Controller.edit);
+router.post("/project2", Project2Controller.add);
+router.delete("/project2/:id", Project2Controller.delete);
 
 router.get("/page", PageController.browse);
 router.get("/page/:id", PageController.read);
