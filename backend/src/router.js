@@ -4,6 +4,7 @@ const {
   ItemController,
   Project1Controller,
   Project2Controller,
+  Project3ProductController,
   PageController,
 } = require("./controllers");
 
@@ -26,6 +27,12 @@ router.get("/project2/:id", Project2Controller.read);
 router.put("/project2/:id", Project2Controller.edit);
 router.post("/project2", Project2Controller.add);
 router.delete("/project2/:id", Project2Controller.delete);
+
+router.get("/p3product", Project3ProductController.browse);
+router.get("/p3product/:id", Project3ProductController.read);
+router.put("/p3product/:id", Project3ProductController.edit);
+router.post("/p3product", Project3ProductController.add);
+router.delete("/p3product/:id", Project3ProductController.delete);
 
 router.get("/page", PageController.browse);
 router.get("/page/:id", PageController.read);
