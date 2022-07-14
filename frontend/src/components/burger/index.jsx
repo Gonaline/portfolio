@@ -9,34 +9,38 @@ export default function Burger({ ...props }) {
   const { burgerOpen, toggleBurger } = useContext(Ctx);
 
   return (
-    <SBurger isOpen={burgerOpen} onClick={toggleBurger} color={props.color}>
-      <img className="choice" src={Logo} alt="logo" />
+    <SBurger isOpen={burgerOpen} color={props.color}>
+      <div className="logo">
+        <img src={Logo} alt="logo" />
+      </div>
 
-      <div className="hamburger">
+      <button
+        type="button"
+        onClick={toggleBurger}
+        className={`hamburger ${burgerOpen}`}
+      >
         <div className="burger burger1" />
         <div className="burger burger2" />
         <div className="burger burger3" />
-      </div>
+      </button>
 
-      <div className="Nav">
-        <ul>
-          <li>
-            <Link className="link" to="/about">
-              ABOUT
-            </Link>
-          </li>
-          <li>
-            <Link className="link" to="/project1">
-              PROJECT#1
-            </Link>
-          </li>
-          <li>
-            <Link className="link" to="/project2">
-              PROJECT#2
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <ul>
+        <li>
+          <Link className="link" to="/about">
+            ABOUT
+          </Link>
+        </li>
+        <li>
+          <Link className="link" to="/project1">
+            PROJECT#1
+          </Link>
+        </li>
+        <li>
+          <Link className="link" to="/project2">
+            PROJECT#2
+          </Link>
+        </li>
+      </ul>
     </SBurger>
   );
 }
