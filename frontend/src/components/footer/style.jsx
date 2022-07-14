@@ -29,6 +29,10 @@ export default styled.footer`
     background-size: contain;
   }
   @media screen and (max-width: 700px) {
+    position: fixed;
+    height: 9vh;
+    top: 91vh;
+
     display: flex;
     justify-content: left;
     .icon {

@@ -38,8 +38,8 @@ export default styled.section`
 
   @media screen and (max-width: 700px) {
     width: 100vw;
-    height: 76vh;
-    margin-top: 14vh;
+    height: 77vh;
+    padding-bottom: 9vh;
 
     .container {
       flex-direction: column;

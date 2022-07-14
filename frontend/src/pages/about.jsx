@@ -22,7 +22,7 @@ export default function PageAbout() {
     <SPage>
       <Header backgroundColor={page.color1} />
       <Burger color={page.color1} />
-      <main>
+      <div className="main">
         <Left
           title={page.title}
           subtitle={page.subtitle}
@@ -34,7 +34,7 @@ export default function PageAbout() {
           title={page.title}
           colorButton={page.colorButton}
         />
-      </main>
+      </div>
       <Footer backgroundColor={page.color1} />
     </SPage>
   );

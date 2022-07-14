@@ -22,7 +22,7 @@ export default function PageProject2() {
     <SPage>
       <Header backgroundColor={page.color1} />
       <Burger color={page.color1} />
-      <main>
+      <div className="main">
         <Left
           title={page.title}
           subtitle={page.subtitle}
@@ -36,7 +36,7 @@ export default function PageProject2() {
           flashColor={page.color4}
           title={page.title}
         />
-      </main>
+      </div>
       <Footer backgroundColor={page.color1} />
     </SPage>
   );
