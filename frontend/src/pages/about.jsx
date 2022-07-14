@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import About from "@components/about";
 import Header from "@components/header";
+import Burger from "@components/burger";
 import Footer from "@components/footer";
 import Left from "@components/left";
-import About from "@components/about";
+import SPage from "@pages/style";
 
 export default function PageAbout() {
   const [page, setPage] = useState([]);
@@ -18,20 +19,23 @@ export default function PageAbout() {
   }, []);
 
   return (
-    <section className="body">
+    <SPage>
       <Header backgroundColor={page.color1} />
-      <Left
-        title={page.title}
-        subtitle={page.subtitle}
-        description={page.description}
-        textColor={page.color1}
-      />
-      <About
-        backgroundColor={page.color2}
-        title={page.title}
-        colorButton={page.colorButton}
-      />
+      <Burger color={page.color1} />
+      <main>
+        <Left
+          title={page.title}
+          subtitle={page.subtitle}
+          description={page.description}
+          textColor={page.color1}
+        />
+        <About
+          backgroundColor={page.color2}
+          title={page.title}
+          colorButton={page.colorButton}
+        />
+      </main>
       <Footer backgroundColor={page.color1} />
-    </section>
+    </SPage>
   );
 }
