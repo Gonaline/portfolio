@@ -1,7 +1,7 @@
 import axios from "axios";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import SProject1 from "./style";
+import SProject2 from "./style";
 
 export default function Project2({ backgroundColor }) {
   const [img, setImg] = useState([]);
@@ -15,7 +15,7 @@ export default function Project2({ backgroundColor }) {
   }, []);
 
   return (
-    <SProject1 backgroundColor={backgroundColor}>
+    <SProject2 backgroundColor={backgroundColor}>
       <div>
         <div className="container">
           {img.map((image) => (
@@ -28,7 +28,7 @@ export default function Project2({ backgroundColor }) {
           ))}
         </div>
       </div>
-    </SProject1>
+    </SProject2>
   );
 }
 

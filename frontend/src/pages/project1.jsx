@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { CtxProvider } from "@services/context/project1Ctx";
 import Project1 from "@components/project1";
 import Header from "@components/header";
+import Burger from "@components/burger";
 import Footer from "@components/footer";
 import Left from "@components/left";
+import SPage from "@pages/style";
 
 export default function PageProject1() {
   const [page, setPage] = useState([]);
@@ -18,24 +20,27 @@ export default function PageProject1() {
   }, []);
 
   return (
-    <section className="body">
+    <SPage>
       <Header backgroundColor={page.color1} />
-      <Left
-        title={page.title}
-        subtitle={page.subtitle}
-        description={page.description}
-        textColor={page.color1}
-      />
-      <CtxProvider>
-        <Project1
-          color={page.color1}
-          backgroundColor={page.color2}
-          otherColor={page.color3}
-          flashColor={page.color4}
+      <Burger color={page.color1} />
+      <div className="main">
+        <Left
           title={page.title}
+          subtitle={page.subtitle}
+          description={page.description}
+          textColor={page.color1}
         />
-      </CtxProvider>
+        <CtxProvider>
+          <Project1
+            color={page.color1}
+            backgroundColor={page.color2}
+            otherColor={page.color3}
+            flashColor={page.color4}
+            title={page.title}
+          />
+        </CtxProvider>
+      </div>
       <Footer backgroundColor={page.color1} />
-    </section>
+    </SPage>
   );
 }

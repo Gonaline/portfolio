@@ -5,7 +5,7 @@ const Ctx = createContext();
 export default Ctx;
 
 export function CtxProvider({ children }) {
-  const [burgerOpen, setBurgerOpen] = useState("red");
+  const [burgerOpen, setBurgerOpen] = useState("");
   const toggleBurger = () => {
     setBurgerOpen(!burgerOpen);
   };

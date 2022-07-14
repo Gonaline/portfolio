@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import Ctx from "@services/context/Ctx";
 import { Link } from "react-router-dom";
-import Logo from "@assets/pictures/project1/rock.png";
+import Logo from "@assets/pictures/logo.svg";
 import SBurger from "./style";
 
 export default function Burger({ ...props }) {
@@ -10,33 +10,39 @@ export default function Burger({ ...props }) {
 
   return (
     <SBurger isOpen={burgerOpen} onClick={toggleBurger} color={props.color}>
-      <img className="choice" src={Logo} alt="logo" />
+      <div className="logo">
+        <Link className="link" to="/about">
+          <img src={Logo} alt="logo" />
+        </Link>
+      </div>
 
-      <div className="hamburger">
+      <button
+        type="button"
+        onClick={toggleBurger}
+        className={`hamburger ${burgerOpen}`}
+      >
         <div className="burger burger1" />
         <div className="burger burger2" />
         <div className="burger burger3" />
-      </div>
+      </button>
 
-      <div className="Nav">
-        <ul>
-          <li>
-            <Link className="link" to="/about">
-              ABOUT
-            </Link>
-          </li>
-          <li>
-            <Link className="link" to="/project1">
-              PROJECT#1
-            </Link>
-          </li>
-          <li>
-            <Link className="link" to="/project2">
-              PROJECT#2
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <ul>
+        <li>
+          <Link className="link" to="/about">
+            ABOUT
+          </Link>
+        </li>
+        <li>
+          <Link className="link" to="/project1">
+            PROJECT#1
+          </Link>
+        </li>
+        <li>
+          <Link className="link" to="/project2">
+            PROJECT#2
+          </Link>
+        </li>
+      </ul>
     </SBurger>
   );
 }

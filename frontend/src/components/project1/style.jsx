@@ -17,7 +17,8 @@ export default styled.section`
   }
   @media screen and (max-width: 700px) {
     width: 100vw;
-    min-height: 75vh;
+    min-height: 77vh;
+    padding-bottom: 9vh;
     margin: auto;
     align-items: flex-start;
     .bottom {

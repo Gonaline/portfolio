@@ -24,6 +24,20 @@ export default styled.section`
     margin-bottom: 6vh;
   }
   @media screen and (max-width: 700px) {
-    display: none;
+    width: 100%;
+    height: auto;
+    margin-top: 14vh;
+    align-items: flex-start;
+
+    p {
+      margin-bottom: 3vh;
+    }
+    h2 {
+      margin-bottom: 4vh;
+    }
+    h2,
+    p {
+      margin-left: 6vw;
+    }
   }
 `;
