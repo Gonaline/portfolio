@@ -9,7 +9,7 @@ export default function Burger({ ...props }) {
   const { burgerOpen, toggleBurger } = useContext(Ctx);
 
   return (
-    <SBurger isOpen={burgerOpen} color={props.color}>
+    <SBurger isOpen={burgerOpen} onClick={toggleBurger} color={props.color}>
       <div className="logo">
         <Link className="link" to="/about">
           <img src={Logo} alt="logo" />
