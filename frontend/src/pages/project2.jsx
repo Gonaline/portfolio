@@ -10,7 +10,7 @@ export default function PageProject2() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/page/project5"}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}${"/page/project2"}`)
       .then(({ data }) => {
         setPage(data);
       });
