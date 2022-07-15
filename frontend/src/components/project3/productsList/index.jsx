@@ -1,18 +1,10 @@
-import axios from "axios";
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import project3Ctx from "@services/context/project3Ctx";
 import SProductList from "./style";
 
 export default function ProductList({ backgroundColor }) {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/p3product"}`)
-      .then(({ data }) => {
-        setProducts(data);
-      });
-  }, []);
+  const { products } = useContext(project3Ctx);
 
   return (
     <SProductList backgroundColor={backgroundColor}>

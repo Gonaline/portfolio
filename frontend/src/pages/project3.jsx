@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { CtxProvider } from "@services/context/project3Ctx";
 import Project3 from "@components/project3";
 import Header from "@components/header";
 import Burger from "@components/burger";
@@ -27,15 +28,17 @@ export default function PageProject3() {
           description={page.description}
           textColor={page.color1}
         />
-        <section className="flexRight">
-          <Project3
-            color={page.color1}
-            backgroundColor={page.color2}
-            otherColor={page.color3}
-            flashColor={page.color4}
-            title={page.title}
-          />
-        </section>
+        <CtxProvider>
+          <div className="flexRight">
+            <Project3
+              color={page.color1}
+              backgroundColor={page.color2}
+              otherColor={page.color3}
+              flashColor={page.color4}
+              title={page.title}
+            />
+          </div>
+        </CtxProvider>
       </div>
       <Header backgroundColor={page.color1} />
       <Burger color={page.color1} />
