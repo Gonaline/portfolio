@@ -33,8 +33,8 @@ export default function PageProject3() {
             <Project3
               color={page.color1}
               backgroundColor={page.color2}
-              otherColor={page.color3}
-              flashColor={page.color4}
+              subMenuColor={page.color3}
+              navColor={page.color4}
               title={page.title}
             />
           </div>
