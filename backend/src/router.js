@@ -5,6 +5,7 @@ const {
   Project1Controller,
   Project2Controller,
   Project3ProductController,
+  Project3CategoryController,
   PageController,
 } = require("./controllers");
 
@@ -33,6 +34,12 @@ router.get("/p3product/:id", Project3ProductController.read);
 router.put("/p3product/:id", Project3ProductController.edit);
 router.post("/p3product", Project3ProductController.add);
 router.delete("/p3product/:id", Project3ProductController.delete);
+
+router.get("/p3category", Project3CategoryController.browse);
+router.get("/p3category/:id", Project3CategoryController.read);
+router.put("/p3category/:id", Project3CategoryController.edit);
+router.post("/p3category", Project3CategoryController.add);
+router.delete("/p3category/:id", Project3CategoryController.delete);
 
 router.get("/page", PageController.browse);
 router.get("/page/:id", PageController.read);
