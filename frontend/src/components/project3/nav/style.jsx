@@ -12,24 +12,25 @@ export default styled.nav`
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  .submenu {
-    display: none;
-  }
+
   .categories {
+    .submenu {
+      display: none;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
-  }
-  .title {
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 3vw;
-    h3 {
-      font-size: 1.8rem;
-      font-weight: bold;
+    .title {
+      height: 10vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 3vw;
+      h3 {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
     }
   }
 
@@ -40,39 +41,43 @@ export default styled.nav`
         return `${props.navColor}`;
       }};
     }
+    a {
+      text-decoration: none;
+    }
     .submenu {
       display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
       width: 70vw;
-      height: 30vh;
+      height: 25vh;
       background: var(--white);
       position: absolute;
       top: 10vh;
-      .ul {
-        width: 100%;
-        height: 100%;
+      padding-left: 3vw;
+      .category {
+        height: 6vh;
+        padding: 0 3px;
+        width: 12vw;
+        margin: 0px 5px;
+        object-fit: contain;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         align-items: center;
-
-        .category {
+        img {
           height: 5vh;
-          width: 15vw;
-          object-fit: contain;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          align-items: center;
-          img {
-            height: 100%;
-            aspect-ratio: 1/1;
-            margin-right: 0.5vw;
-          }
-          h4 {
-            font-size: 1rem;
-          }
+          aspect-ratio: 1/1;
+          margin-right: 5px;
         }
+        h4 {
+          font-size: 0.9rem;
+        }
+      }
+      .category:hover {
+        background-color: #ff697350;
+        border-radius: 10px;
+        box-shadow: 6px 6px 2px 1px #ff6973;
       }
     }
   }

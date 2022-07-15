@@ -14,19 +14,21 @@ export default function Nav({ navColor, subMenuColor }) {
           <h3>CATEGORIES</h3>
         </div>
         <div className="submenu">
-          <div className="ul">
-            {categories.map((category) => (
-              <Link to="/about" className="link">
-                <div className="category" id={category.id}>
-                  <img
-                    src={`./src/assets/pictures/project3/${category.categoryImg}.png`}
-                    alt={category.id}
-                  />
-                  <h4>{category.categoryName}</h4>
-                </div>
-              </Link>
-            ))}
-          </div>
+          {categories.map((category) => (
+            <Link
+              to={`/project3/${category.id}`}
+              className="link"
+              id={category.id}
+            >
+              <div className="category">
+                <img
+                  src={`./src/assets/pictures/project3/${category.categoryImg}.png`}
+                  alt={category.categoryName}
+                />
+                <h4>{category.categoryName}</h4>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </SNav>
