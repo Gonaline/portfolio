@@ -26,6 +26,8 @@ export default styled.section`
     margin-bottom: 6vh;
   }
   @media screen and (max-width: 700px) {
+    position: static;
+
     width: 100%;
     height: auto;
     margin-top: 14vh;

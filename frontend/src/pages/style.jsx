@@ -18,6 +18,12 @@ export default styled.body`
     display: flex;
   }
   @media screen and (max-width: 700px) {
+    .fixedRight {
+    position: static;
+  }
+  .flexRight {
+    position: static;
+  }
     width: 100vw;
     height: 100vh;
     display: flex
