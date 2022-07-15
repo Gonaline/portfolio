@@ -31,13 +31,15 @@ export default function PageProject1() {
           textColor={page.color1}
         />
         <CtxProvider>
-          <Project1
-            color={page.color1}
-            backgroundColor={page.color2}
-            otherColor={page.color3}
-            flashColor={page.color4}
-            title={page.title}
-          />
+          <div className="fixedRight">
+            <Project1
+              color={page.color1}
+              backgroundColor={page.color2}
+              otherColor={page.color3}
+              flashColor={page.color4}
+              title={page.title}
+            />
+          </div>
         </CtxProvider>
       </div>
       <Footer backgroundColor={page.color1} />

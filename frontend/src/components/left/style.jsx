@@ -4,6 +4,8 @@ export default styled.section`
   background-color: var(--darkColor);
   width: 30vw;
   height: 75vh;
+  position: fixed;
+  top: 15vh;
   display: flex;
   align-items: center;
   p,

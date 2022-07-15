@@ -29,13 +29,15 @@ export default function PageProject2() {
           description={page.description}
           textColor={page.color1}
         />
-        <Project2
-          color={page.color1}
-          backgroundColor={page.color2}
-          otherColor={page.color3}
-          flashColor={page.color4}
-          title={page.title}
-        />
+        <div className="fixedRight">
+          <Project2
+            color={page.color1}
+            backgroundColor={page.color2}
+            otherColor={page.color3}
+            flashColor={page.color4}
+            title={page.title}
+          />
+        </div>
       </div>
       <Footer backgroundColor={page.color1} />
     </SPage>

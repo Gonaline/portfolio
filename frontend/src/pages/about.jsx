@@ -29,11 +29,13 @@ export default function PageAbout() {
           description={page.description}
           textColor={page.color1}
         />
-        <About
-          backgroundColor={page.color2}
-          title={page.title}
-          colorButton={page.colorButton}
-        />
+        <div className="fixedRight">
+          <About
+            backgroundColor={page.color2}
+            title={page.title}
+            colorButton={page.colorButton}
+          />
+        </div>
       </div>
       <Footer backgroundColor={page.color1} />
     </SPage>

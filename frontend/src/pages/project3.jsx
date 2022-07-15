@@ -20,8 +20,6 @@ export default function PageProject3() {
 
   return (
     <SPage>
-      <Header backgroundColor={page.color1} />
-      <Burger color={page.color1} />
       <div className="main">
         <Left
           title={page.title}
@@ -29,14 +27,18 @@ export default function PageProject3() {
           description={page.description}
           textColor={page.color1}
         />
-        <Project3
-          color={page.color1}
-          backgroundColor={page.color2}
-          otherColor={page.color3}
-          flashColor={page.color4}
-          title={page.title}
-        />
+        <section className="flexRight">
+          <Project3
+            color={page.color1}
+            backgroundColor={page.color2}
+            otherColor={page.color3}
+            flashColor={page.color4}
+            title={page.title}
+          />
+        </section>
       </div>
+      <Header backgroundColor={page.color1} />
+      <Burger color={page.color1} />
       <Footer backgroundColor={page.color1} />
     </SPage>
   );
