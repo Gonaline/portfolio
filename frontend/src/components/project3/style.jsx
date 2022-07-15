@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default styled.section`
   width: 70vw;
-  height: 75vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   background: ${(props) => {

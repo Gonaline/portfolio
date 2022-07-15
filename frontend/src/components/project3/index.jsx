@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-// import ProductList from "./productsList";
+import ProductList from "./productsList";
 import Nav from "./nav";
 import SProject3 from "./style";
 
@@ -9,7 +9,7 @@ export default function Project3({ backgroundColor, navColor, subMenuColor }) {
       <div>
         <Nav navColor={navColor} subMenuColor={subMenuColor} />
       </div>
-      {/* <ProductList /> */}
+      <ProductList />
     </SProject3>
   );
 }

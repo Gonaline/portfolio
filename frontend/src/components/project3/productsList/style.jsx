@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default styled.section`
   width: 90%;
-  height: 75vh;
+  min-height: 75vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -14,10 +14,6 @@ export default styled.section`
     width: 5vw;
     aspect-ratio: 1/1;
     object-fit: contain;
-  }
-  img {
-    width: 100%;
-    height: 100%;
   }
 
   @media screen and (max-width: 700px) {

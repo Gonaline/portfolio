@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import project3Ctx from "@services/context/project3Ctx";
+import ProductCard from "../productCard";
+
 import SProductList from "./style";
 
 export default function ProductList({ backgroundColor }) {
@@ -9,13 +11,11 @@ export default function ProductList({ backgroundColor }) {
   return (
     <SProductList backgroundColor={backgroundColor}>
       {products.map((product) => (
-        <div className="product">
-          <img
-            className="choice"
-            src={`./src/assets/pictures/project3/${product.id}.png`}
-            alt={product.id}
-          />
-        </div>
+        <ProductCard
+          key={product.id}
+          img={`../src/assets/pictures/project3/${product.id}.png`}
+          name={product.name}
+        />
       ))}
     </SProductList>
   );
