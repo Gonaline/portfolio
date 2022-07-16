@@ -1,13 +1,13 @@
 const AbstractManager = require("./AbstractManager");
 
-class NewsAndTeamManager extends AbstractManager {
+class Project3ProductByCategoryManager extends AbstractManager {
   static table = "p3productbycategory";
 
   findAll() {
     return this.connection.query(
-      `SELECT p.name, p.id, chp.category_id
-      FROM p3category_has_product AS chp
-      INNER JOIN p3product AS p ON p.id=chp.product_id;`
+      `SELECT p.name, p.id, chp.categoryid
+      FROM p3categoryhasproduct AS chp
+      INNER JOIN p3product AS p ON p.id=chp.productid;`
     );
   }
 
@@ -19,4 +19,4 @@ class NewsAndTeamManager extends AbstractManager {
   // }
 }
 
-module.exports = NewsAndTeamManager;
+module.exports = Project3ProductByCategoryManager;

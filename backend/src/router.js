@@ -7,6 +7,7 @@ const {
   Project3ProductController,
   Project3CategoryController,
   Project3ProductByCategoryController,
+  Project3ColorsByProductController,
   PageController,
 } = require("./controllers");
 
@@ -47,6 +48,9 @@ router.get(
   "/p3productbycategory/:id",
   Project3ProductByCategoryController.read
 );
+
+router.get("/p3colorsbyproduct", Project3ColorsByProductController.browse);
+router.get("/p3colorsbyproduct/:id", Project3ColorsByProductController.read);
 
 router.get("/page", PageController.browse);
 router.get("/page/:id", PageController.read);
