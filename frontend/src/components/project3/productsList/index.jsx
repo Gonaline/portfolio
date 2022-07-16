@@ -13,6 +13,7 @@ export default function ProductList({ backgroundColor }) {
       {products.map((product) => (
         <ProductCard
           key={product.id}
+          id={product.id}
           img={`../src/assets/pictures/project3/${product.id}.png`}
           name={product.name}
         />
