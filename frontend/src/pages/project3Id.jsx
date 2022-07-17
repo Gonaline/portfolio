@@ -29,11 +29,11 @@ export default function PageProject3Id() {
         />
         <div className="flexRight">
           <Product
-            color={page.color1}
+            // color={page.color1}
             backgroundColor={page.color2}
-            subMenuColor={page.color3}
-            navColor={page.color4}
-            title={page.title}
+            // subMenuColor={page.color3}
+            // navColor={page.color4}
+            // title={page.title}
           />
         </div>
       </div>

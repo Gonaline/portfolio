@@ -31,11 +31,11 @@ export default function PageProject3() {
         <CtxProvider>
           <div className="flexRight">
             <Project3
-              color={page.color1}
+              // color={page.color1}
               backgroundColor={page.color2}
               subMenuColor={page.color3}
               navColor={page.color4}
-              title={page.title}
+              // title={page.title}
             />
           </div>
         </CtxProvider>
