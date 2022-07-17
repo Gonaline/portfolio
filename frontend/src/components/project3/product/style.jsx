@@ -27,6 +27,15 @@ export default styled.section`
       background-size: cover;
       margin: 3%;
     }
+    .technicalSheet2 {
+      height: 10vh;
+      aspect-ratio: 1/1;
+      background: ${(props) => {
+        return `url(${props.technicalSheet2}) no-repeat`;
+      }};
+      background-size: cover;
+      margin: 3%;
+    }
     .bigImg {
       height: 10vh;
       aspect-ratio: 1/1;
@@ -95,6 +104,10 @@ export default styled.section`
           background-color: var(--white);
           border: 0.2px grey solid;
         } */
+      }
+      h1{
+        font-size:1rem;
+        padding-bottom:5px;
       }
 
       .imgColor {

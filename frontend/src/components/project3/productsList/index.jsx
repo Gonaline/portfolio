@@ -14,7 +14,7 @@ export default function ProductList({ backgroundColor }) {
         <ProductCard
           key={product.id}
           id={product.id}
-          img={`../src/assets/pictures/project3/${product.id}.png`}
+          img={`../src/assets/pictures/project3/products/${product.id}.png`}
           name={product.name}
         />
       ))}
