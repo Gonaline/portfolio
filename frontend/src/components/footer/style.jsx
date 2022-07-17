@@ -3,6 +3,8 @@ import styled from "styled-components";
 export default styled.footer`
   height: 10vh;
   width: 100vw;
+  position: fixed;
+  bottom: 0;
   background: ${(props) => {
     return `${props.backgroundColor}`;
   }};

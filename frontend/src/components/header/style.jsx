@@ -3,6 +3,7 @@ import styled from "styled-components";
 export default styled.header`
   height: 15vh;
   width: 100vw;
+  position: fixed;
   background: ${(props) => {
     return `${props.backgroundColor}`;
   }};

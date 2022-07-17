@@ -4,6 +4,10 @@ const {
   ItemController,
   Project1Controller,
   Project2Controller,
+  Project3ProductController,
+  Project3CategoryController,
+  Project3ProductByCategoryController,
+  Project3ColorsByProductController,
   PageController,
 } = require("./controllers");
 
@@ -26,6 +30,27 @@ router.get("/project2/:id", Project2Controller.read);
 router.put("/project2/:id", Project2Controller.edit);
 router.post("/project2", Project2Controller.add);
 router.delete("/project2/:id", Project2Controller.delete);
+
+router.get("/p3product", Project3ProductController.browse);
+router.get("/p3product/:id", Project3ProductController.read);
+router.put("/p3product/:id", Project3ProductController.edit);
+router.post("/p3product", Project3ProductController.add);
+router.delete("/p3product/:id", Project3ProductController.delete);
+
+router.get("/p3category", Project3CategoryController.browse);
+router.get("/p3category/:id", Project3CategoryController.read);
+router.put("/p3category/:id", Project3CategoryController.edit);
+router.post("/p3category", Project3CategoryController.add);
+router.delete("/p3category/:id", Project3CategoryController.delete);
+
+router.get("/p3productbycategory", Project3ProductByCategoryController.browse);
+router.get(
+  "/p3productbycategory/:id",
+  Project3ProductByCategoryController.read
+);
+
+router.get("/p3colorsbyproduct", Project3ColorsByProductController.browse);
+router.get("/p3colorsbyproduct/:id", Project3ColorsByProductController.read);
 
 router.get("/page", PageController.browse);
 router.get("/page/:id", PageController.read);
