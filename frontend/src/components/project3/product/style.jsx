@@ -10,41 +10,46 @@ export default styled.section`
   display: flex;
   justify-content: left;
   align-items: stretch;
-  .img {
+
+  .bigImg {
     height: 55vh;
     aspect-ratio: 1/1;
     background: ${(props) => {
-      return `url(${props.img}) no-repeat`;
+      return `url(${props.bigImg}) no-repeat`;
     }};
     background-size: cover;
     margin: 0 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    button {
+      border: none;  
+      height: 8vh;
+      aspect-ratio: 1/1; 
+      margin: 3%;
+    }
+    .photo {
+      background: ${(props) => {
+        return `url(${props.photo}) no-repeat`;
+      }};
+        background-size: cover;
+    }
     .technicalSheet {
-      height: 10vh;
-      aspect-ratio: 1/1;
       background: ${(props) => {
         return `url(${props.technicalSheet}) no-repeat`;
       }};
-      background-size: cover;
-      margin: 3%;
+       background-size: cover;
     }
     .technicalSheet2 {
-      height: 10vh;
-      aspect-ratio: 1/1;
       background: ${(props) => {
         return `url(${props.technicalSheet2}) no-repeat`;
       }};
-      background-size: cover;
-      margin: 3%;
+            background-size: cover;
     }
-    .bigImg {
-      height: 10vh;
-      aspect-ratio: 1/1;
-      background: ${(props) => {
-        return `url(${props.img}) no-repeat`;
-      }};
-      background-size: cover;
-      margin: 3%;
+    .none{
+      display: none;
     }
+
   }
 
   .right {
@@ -72,9 +77,6 @@ export default styled.section`
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* justify-content: flex-start;
-    align-items: left; */
-
     h5 {
       padding: 10px 0 0px 10px;
       background-color: pink;
@@ -95,15 +97,6 @@ export default styled.section`
           display: none;
         }
       }
-      /* button:hover {
-        .textColor {
-          display: flex;
-          position: relative;
-          top: 15px;
-          left: 50px;
-          background-color: var(--white);
-          border: 0.2px grey solid;
-        } */
       }
       h1{
         font-size:1rem;

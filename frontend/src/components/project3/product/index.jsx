@@ -11,7 +11,7 @@ export default function Product({ backgroundColor }) {
   const [colors2, setColors2] = useState([]);
   const [colorChoice, setColorChoice] = useState("");
   const [colorChoice2, setColorChoice2] = useState("");
-  const [imageName, setImageName] = useState(id);
+  const [bigImg, setBigImg] = useState(id);
 
   useEffect(() => {
     axios
@@ -43,25 +43,55 @@ export default function Product({ backgroundColor }) {
       });
   }, []);
 
+  const imgLink = "../src/assets/pictures/project3/products/";
+
   return (
     <SProduct
       color1={colorChoice}
-      id={sticker.id}
       backgroundColor={backgroundColor}
-      img={`../src/assets/pictures/project3/products/${imageName}.png`}
-      technicalSheet={`../src/assets/pictures/project3/technicalSheet/${id}_ft.png`}
-      technicalSheet2={
-        sticker.ftNumber === 1
-          ? ""
-          : `../src/assets/pictures/project3/technicalSheet/${id}_ft_2.png`
-      }
+      photo={`${imgLink}${id}.png`}
+      bigImg={`${imgLink}${bigImg}.png`}
+      technicalSheet={`${imgLink}${id}_ft.png`}
+      technicalSheet2={`${imgLink}${id}_ft_2.png`}
       mirror={sticker.mirror}
       ftNumber={sticker.ftNumber}
     >
-      <section className="img">
-        <div firstImg="bigImg" />
-        <div className="technicalSheet" />
-        <div className="technicalSheet2" />
+      <section className="bigImg">
+        <button
+          className={
+            sticker.photoNumber > 0 && `${id}` !== `${bigImg}`
+              ? "hover photo"
+              : "none"
+          }
+          type="button"
+          aria-label="Save"
+          onClick={() => {
+            setBigImg(`${id}`);
+          }}
+        />
+        <button
+          className={
+            `${bigImg}` !== `${id}_ft` ? "hover technicalSheet" : "none"
+          }
+          type="button"
+          aria-label="Save"
+          onClick={() => {
+            setBigImg(`${id}_ft`);
+          }}
+        />
+        <button
+          className={
+            sticker.ftNumber > 1 && `${bigImg}` !== `${id}_ft_2`
+              ? "hover technicalSheet2"
+              : "none"
+          }
+          type="button"
+          aria-label="Save"
+          onClick={() => {
+            setBigImg(`${id}_ft_2`);
+          }}
+        />
+        <div />
       </section>
 
       <div className="right">
@@ -78,7 +108,7 @@ export default function Product({ backgroundColor }) {
                   value={color.name}
                   onClick={() => {
                     setColorChoice(color.img);
-                    setImageName(
+                    setBigImg(
                       `${sticker.id}${
                         !sticker.fixedColor ? "" : sticker.fixedColor
                       }${color.img}${
@@ -109,7 +139,7 @@ export default function Product({ backgroundColor }) {
                   value={color.name}
                   onClick={() => {
                     setColorChoice2(color.img);
-                    setImageName(
+                    setBigImg(
                       `${sticker.id}${
                         !sticker.fixedColor ? "" : sticker.fixedColor
                       }${colorChoice}${color.img}`
@@ -128,7 +158,7 @@ export default function Product({ backgroundColor }) {
               );
             })}
           </div>
-          <h1>{`../src/assets/pictures/project3/products/${imageName}.png`}</h1>
+          <h1>{`${imgLink}${bigImg}.png`}</h1>
         </div>
 
         <h6>Format : {sticker.textSize}</h6>
