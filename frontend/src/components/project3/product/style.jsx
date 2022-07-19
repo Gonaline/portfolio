@@ -10,7 +10,14 @@ export default styled.section`
   display: flex;
   justify-content: left;
   align-items: stretch;
-
+.option button{
+  border: none;  
+  width:3vw;
+  aspect-ratio:1/1;
+  .imgOption {
+        width: 100%;
+      }
+}
   .bigImg {
     height: 55vh;
     aspect-ratio: 1/1;

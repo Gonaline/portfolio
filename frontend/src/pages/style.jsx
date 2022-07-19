@@ -9,7 +9,7 @@ export default styled.body`
   }
   .flexRight {
     position: absolute;
-    width:100%;
+    width:70vw;
     left: 30vw;
     top: 15vh;
     height: auto;

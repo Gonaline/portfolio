@@ -12,12 +12,17 @@ export default function Product({ backgroundColor }) {
   const [colorChoice, setColorChoice] = useState("");
   const [colorChoice2, setColorChoice2] = useState("");
   const [bigImg, setBigImg] = useState(id);
+  const [optionId, setOptionId] = useState("");
+  const [options, setOptions] = useState([]);
+  const [optionName, setOptionName] = useState("");
+  const [optionChoice, setOptionChoice] = useState("");
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}${"/p3product/"}${id}`)
       .then(({ data }) => {
         setSticker(data);
+        setOptionId(data.option_Id);
       });
   }, []);
 
@@ -43,7 +48,26 @@ export default function Product({ backgroundColor }) {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(
+        `${import.meta.env.VITE_BACKEND_URL}${"/p3optionbyproduct/"}${optionId}`
+      )
+      .then(({ data }) => {
+        if (sticker.option_Id === 0) {
+          setOptionChoice("");
+        } else {
+          setOptions(data);
+          setOptionChoice(data[0].codeImg);
+          setOptionName(data[0].optionName);
+        }
+      });
+  }, [optionId]);
+
   const imgLink = "../src/assets/pictures/project3/products/";
+  const test = `${imgLink}${id}${optionChoice}${sticker.fixedColor}${colorChoice}${colorChoice2}.png`;
+  // console.log(bib);
+  // console.log(`${imgLink}${bigImg}.png`);
 
   return (
     <SProduct
@@ -95,8 +119,43 @@ export default function Product({ backgroundColor }) {
       </section>
 
       <div className="right">
+        <p>{bigImg}</p>
+        <p>{test}</p>
         <h2>{sticker.name}</h2>
         <h4>{sticker.introduction}</h4>
+        {sticker.option_Id > 0 && (
+          <div className="option">
+            <p>{optionName}</p>
+            <p>{sticker.option_Id}</p>
+
+            {options.map((option) => {
+              return (
+                <button
+                  type="button"
+                  value={option.optionDetailName}
+                  onClick={() => {
+                    setOptionChoice(option.codeImg);
+                    setBigImg(
+                      `${sticker.id}${option.codeImg}${
+                        !sticker.fixedColor ? "" : sticker.fixedColor
+                      }${colorChoice}${colorChoice2}
+                      `
+                    );
+                  }}
+                >
+                  <img
+                    className="imgOption"
+                    alt={option.name}
+                    src={`../src/assets/pictures/project3/options/${option.codeImg}.png`}
+                  />
+                  <div className="textColor">
+                    <p>{option.name}</p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        )}
         <div className="colorsChoice1">
           <h5>Choix du coloris : {colorChoice}</h5>
           <div className="choices">
@@ -109,7 +168,7 @@ export default function Product({ backgroundColor }) {
                   onClick={() => {
                     setColorChoice(color.img);
                     setBigImg(
-                      `${sticker.id}${
+                      `${sticker.id}${optionChoice}${
                         !sticker.fixedColor ? "" : sticker.fixedColor
                       }${color.img}${
                         sticker.colorChoiceNumber === 1 ? "" : colorChoice2
@@ -130,35 +189,37 @@ export default function Product({ backgroundColor }) {
             })}
           </div>
 
-          <div className="choices2">
-            {colors2.map((color) => {
-              return (
-                <button
-                  key={color.name}
-                  type="button"
-                  value={color.name}
-                  onClick={() => {
-                    setColorChoice2(color.img);
-                    setBigImg(
-                      `${sticker.id}${
-                        !sticker.fixedColor ? "" : sticker.fixedColor
-                      }${colorChoice}${color.img}`
-                    );
-                  }}
-                >
-                  <img
-                    className="imgColor"
-                    alt={color.name}
-                    src={`../src/assets/pictures/project3/colors/${color.name}.png`}
-                  />
-                  <div className="textColor">
-                    <p>{color.name}</p>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-          <h1>{`${imgLink}${bigImg}.png`}</h1>
+          {sticker.colorChoiceNumber !== 1 && (
+            <div className="choices2">
+              {colors2.map((color) => {
+                return (
+                  <button
+                    key={color.name}
+                    type="button"
+                    value={color.name}
+                    onClick={() => {
+                      setColorChoice2(color.img);
+                      setBigImg(
+                        `${sticker.id}${optionChoice}${
+                          !sticker.fixedColor ? "" : sticker.fixedColor
+                        }${colorChoice}${color.img}`
+                      );
+                    }}
+                  >
+                    <img
+                      className="imgColor"
+                      alt={color.name}
+                      src={`../src/assets/pictures/project3/colors/${color.name}.png`}
+                    />
+                    <div className="textColor">
+                      <p>{color.name}</p>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+          <h1>{`${imgLink}${id}${optionChoice}${sticker.fixedColor}${colorChoice}${colorChoice2}.png`}</h1>
         </div>
 
         <h6>Format : {sticker.textSize}</h6>
