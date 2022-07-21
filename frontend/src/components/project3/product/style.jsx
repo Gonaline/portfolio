@@ -16,26 +16,31 @@ export default styled.section`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* background-color: #d9a4f2; */
   }
 
   .title {
     font-size: 1.8rem;
     font-weight: bold;
-    /* border-bottom: 0.1px black solid; */
+  }
+  .collection {
+    font-size: 1rem;
+    font-style: italic;
     margin-bottom: 1.5vh;
+    color: ${(props) => {
+      return `${props.color}`;
+    }};
   }
   .introduction {
     font-size: 1rem;
     line-height: 1.2rem;
     margin-bottom: 1.5vh;
-    /* border-bottom: 0.1px black solid; */
   }
   .size,
   .textColors {
     font-size: 0.8rem;
     font-style: italic;
     margin-bottom: 1.5vh;
+    line-height: 1rem;
   }
   .price {
     font-size: 1.2rem;

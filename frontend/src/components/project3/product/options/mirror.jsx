@@ -18,7 +18,7 @@ export default function Mirror({ mirrorChoice, setMirrorChoice }) {
             <img
               className="imgOption"
               alt="sens non inverse"
-              src="../src/assets/pictures/project3/options/_b.png"
+              src="/src/assets/pictures/project3/options/_b.png"
             />
           </button>
           <button
@@ -30,7 +30,7 @@ export default function Mirror({ mirrorChoice, setMirrorChoice }) {
             <img
               className="imgOption"
               alt="sens non inverse"
-              src="../src/assets/pictures/project3/options/_t.png"
+              src="/src/assets/pictures/project3/options/_t.png"
             />
           </button>
         </div>

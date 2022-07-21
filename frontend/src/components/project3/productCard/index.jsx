@@ -5,14 +5,12 @@ import SProductCard from "./style";
 export default function ProductCard({ backgroundColor, img, name, id }) {
   return (
     <SProductCard backgroundColor={backgroundColor} img={img}>
-      <Link to={`/project3/${id}`} className="link">
-        <div className="container">
-          <div className="text">
-            <h3>{name}</h3>
-          </div>
-          <div className="add">
-            <p>+</p>
-          </div>
+      <Link to={`/project3/product/${id}`} className="link container">
+        <div className="text">
+          <h3>{name}</h3>
+        </div>
+        <div className="add">
+          <p>+</p>
         </div>
       </Link>
     </SProductCard>

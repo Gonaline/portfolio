@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import ProductImg from "./productImg";
 import Colors from "./options/colors";
 import Colors2 from "./options/colors2";
-// import Nav from "../nav";
+import Nav from "../nav";
 import Option from "./options/option";
 import Mirror from "./options/mirror";
 import SProduct from "./style";
@@ -22,11 +22,12 @@ export default function Product({ backgroundColor, color }) {
   const [optionName, setOptionName] = useState("");
   const [options, setOptions] = useState([]);
   const [optionChoice, setOptionChoice] = useState("");
-  const [mirror, setMirror] = useState(0);
   const [mirrorChoice, setMirrorChoice] = useState(false);
   const [bigImg, setBigImg] = useState(id);
+  const [mainCategoryId, setMainCategoryId] = useState(0);
+  const [mainCategoryName, setMainCategoryName] = useState("");
 
-  const imgLink = "../src/assets/pictures/project3/products/";
+  const imgLink = "/src/assets/pictures/project3/products/";
 
   useEffect(() => {
     axios
@@ -35,13 +36,25 @@ export default function Product({ backgroundColor, color }) {
         setSticker(data);
         setFixedColorsName(data.fixedColor);
         setOptionId(data.option_Id);
-        setMirror(data.mirror);
+        setMainCategoryId(data.mainCategory_id);
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }${"/p3productbycategory/"}${mainCategoryId}`
+      )
+      .then(({ data }) => {
+        setMainCategoryName(data[0].categoryName);
+      });
+  }, [mainCategoryId]);
+
   return (
     <SProduct backgroundColor={backgroundColor} color={color}>
-      {/* <Nav navColor={backgroundColor} subMenuColor={backgroundColor} /> */}
+      <Nav navColor={backgroundColor} subMenuColor={backgroundColor} />
       <ProductImg
         sticker={sticker}
         bigImg={bigImg}
@@ -51,9 +64,8 @@ export default function Product({ backgroundColor, color }) {
       />
       <div className="right">
         <h2 className="title">{sticker.name}</h2>
-        <p className="textColors">Coloris fixe(s) : {mirror}</p>
+        <p className="collection">Collection : {mainCategoryName}</p>
         <p className="introduction">{sticker.introduction}</p>
-        {`${bigImg}` === `${id}_ft` ? <p>aaaaa</p> : <p>xxxx{mirror}</p>}
         <Colors
           optionChoice={optionChoice}
           fixedColor={fixedColorsName === null ? "" : `_${fixedColorsName}`}

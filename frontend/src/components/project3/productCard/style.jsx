@@ -5,54 +5,59 @@ export default styled.section`
     return `url(${props.img}) no-repeat`;
   }};
   border-radius: 10%;
-  width: 20%;
-  margin: 2%;
+  width: 19%;
   aspect-ratio: 1/1;
+  margin: 2%;
   background-size: contain;
   display: flex;
+  flex-wrap: column;
   justify-content: center;
   align-items: center;
+
   .container {
     display: none;
   }
+
   :hover {
     border-radius: 50%;
+
     .container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
       background-color: #ff697399;
       border-radius: 50%;
-      .text {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        h3 {
-          display: flex;
-          color: var(--white);
-          text-align: center;
-          font-size: 2rem;
-        }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      aspect-ratio: 1/1;
+    }
+    a {
+      text-decoration: none;
+    }
+    .text {
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        padding-top: 20%;
+        color: var(--white);
+        text-align: center;
+        font-size: 1.5rem;
       }
     }
-
     .add {
-      position: absolute;
+      position: relative;
+      top: 2vh;
       width: 30px;
       aspect-ratio: 1/1;
       background-color: red;
       border-radius: 0.5vw;
       color: var(--white);
-      p {
-        display: block;
-        text-align: center;
-      }
+      text-align: center;
     }
   }
+
   @media screen and (max-width: 700px) {
   }
 `;

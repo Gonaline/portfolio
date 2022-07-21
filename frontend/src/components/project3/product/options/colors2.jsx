@@ -48,7 +48,7 @@ export default function Colors2({
                 <img
                   className="imgOption"
                   alt={color.name}
-                  src={`../src/assets/pictures/project3/colors/${color.name}.png`}
+                  src={`/src/assets/pictures/project3/colors/${color.name}.png`}
                 />
                 <div className="textOption">
                   <p>{color.name}</p>

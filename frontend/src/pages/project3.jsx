@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { CtxProvider } from "@services/context/project3Ctx";
-import Project3 from "@components/project3";
+import { CtxProvider } from "@services/context/project1Ctx";
+import Project3 from "@components/project3/allProducts";
 import Header from "@components/header";
 import Burger from "@components/burger";
 import Footer from "@components/footer";
@@ -31,11 +31,9 @@ export default function PageProject3() {
         <CtxProvider>
           <div className="flexRight">
             <Project3
-              // color={page.color1}
               backgroundColor={page.color2}
               subMenuColor={page.color3}
               navColor={page.color4}
-              // title={page.title}
             />
           </div>
         </CtxProvider>

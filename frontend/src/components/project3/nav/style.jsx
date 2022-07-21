@@ -3,33 +3,42 @@ import styled from "styled-components";
 export default styled.nav`
   min-width: 100%;
   max-width: 100%;
-  height: 10vh;
+  height: 8vh;
   background: ${(props) => {
     return `${props.navColor}`;
   }};
+  background-color: #ffffff58;
+  -webkit-box-shadow: 0px 10px 13px -7px #00000077,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #00000077, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
 
   .categories {
-    .submenu {
-      display: none;
-    }
+    height: 8vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
+    .submenu {
+      display: none;
+    }
+
     .title {
-      height: 10vh;
+      /* height: 8vh; */
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 3vw;
+      /* padding: 0 3vw; */
+
       h3 {
         font-size: 1.8rem;
         font-weight: bold;
+        margin: 0 2.5vw;
+        padding-top: 2vh;
       }
     }
   }
@@ -53,7 +62,7 @@ export default styled.nav`
       height: 25vh;
       background: var(--white);
       position: absolute;
-      top: 10vh;
+      top: 8vh;
       padding-left: 3vw;
       .category {
         height: 6vh;

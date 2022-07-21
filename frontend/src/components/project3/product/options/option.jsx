@@ -57,7 +57,7 @@ export default function Option({
                 <img
                   className="imgOption"
                   alt={option.name}
-                  src={`../src/assets/pictures/project3/options/${option.codeImg}.png`}
+                  src={`/src/assets/pictures/project3/options/${option.codeImg}.png`}
                 />
                 <div className="textOption">
                   <p>{option.name}</p>

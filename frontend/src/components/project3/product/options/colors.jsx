@@ -15,7 +15,6 @@ export default function Colors({
   setBigImg,
 }) {
   const { id } = useParams();
-
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}${"/p3colorsbyproduct/"}${id}`)
@@ -48,7 +47,7 @@ export default function Colors({
                 <img
                   className="imgOption"
                   alt={color.name}
-                  src={`../src/assets/pictures/project3/colors/${color.name}.png`}
+                  src={`/src/assets/pictures/project3/colors/${color.name}.png`}
                 />
                 <div className="textOption">
                   <p>{color.name}</p>
