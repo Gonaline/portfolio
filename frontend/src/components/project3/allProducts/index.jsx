@@ -3,11 +3,10 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "../productCard";
-import Nav from "../nav";
 
 import SProject3 from "./style";
 
-export default function Project3({ backgroundColor, navColor, subMenuColor }) {
+export default function Project3({ backgroundColor }) {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [categoryName, setCategoryName] = useState("");
@@ -29,9 +28,6 @@ export default function Project3({ backgroundColor, navColor, subMenuColor }) {
       backgroundColor={backgroundColor}
       imgCollection={`${ImgLink}${categoryImg}.png`}
     >
-      <div>
-        <Nav navColor={navColor} subMenuColor={subMenuColor} />
-      </div>
       <div className="imgCollection">
         <img src={`${ImgLink}${categoryImg}.png`} alt="" />
         <h3>{categoryName}</h3>
@@ -41,7 +37,7 @@ export default function Project3({ backgroundColor, navColor, subMenuColor }) {
           <ProductCard
             key={product.id}
             id={product.id}
-            img={`../src/assets/pictures/project3/products/${product.id}.png`}
+            img={`/src/assets/pictures/project3/products/${product.id}.png`}
             name={product.name}
           />
         ))}
@@ -52,6 +48,4 @@ export default function Project3({ backgroundColor, navColor, subMenuColor }) {
 
 Project3.propTypes = {
   backgroundColor: PropTypes.string.isRequired,
-  navColor: PropTypes.string.isRequired,
-  subMenuColor: PropTypes.string.isRequired,
 };

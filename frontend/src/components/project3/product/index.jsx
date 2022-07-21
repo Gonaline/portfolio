@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import ProductImg from "./productImg";
 import Colors from "./options/colors";
 import Colors2 from "./options/colors2";
-import Nav from "../nav";
 import Option from "./options/option";
 import Mirror from "./options/mirror";
 import SProduct from "./style";
@@ -54,7 +53,6 @@ export default function Product({ backgroundColor, color }) {
 
   return (
     <SProduct backgroundColor={backgroundColor} color={color}>
-      <Nav navColor={backgroundColor} subMenuColor={backgroundColor} />
       <ProductImg
         sticker={sticker}
         bigImg={bigImg}
