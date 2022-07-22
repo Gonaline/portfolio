@@ -20,7 +20,6 @@ export default function PageProject2() {
 
   return (
     <SPage>
-      <Header backgroundColor={page.color1} />
       <Burger color={page.color1} />
       <div className="main">
         <Left
@@ -39,6 +38,7 @@ export default function PageProject2() {
           />
         </div>
       </div>
+      <Header backgroundColor={page.color1} />
       <Footer backgroundColor={page.color1} />
     </SPage>
   );

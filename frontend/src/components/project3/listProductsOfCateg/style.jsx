@@ -7,7 +7,7 @@ export default styled.section`
   /* background: #be565d; */
 
   background: ${(props) => {
-    return `${props.backgroundColor}`;
+    return `${props.whiteOpacity}`;
   }};
 
   padding-bottom: 15vh;
