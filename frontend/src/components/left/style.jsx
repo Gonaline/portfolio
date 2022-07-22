@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export default styled.section`
   background-color: var(--darkColor);
+
+  min-width: 30vw;
+  min-height: 75vh;
+  max-width: 30vw;
+  max-height: 75vh;
   width: 30vw;
   height: 75vh;
   position: fixed;

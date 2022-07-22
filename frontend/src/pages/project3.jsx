@@ -6,7 +6,7 @@ import Burger from "@components/burger";
 import Footer from "@components/footer";
 import Left from "@components/left";
 import Nav from "@components/project3/nav";
-import SPage from "@pages/style";
+import SPage from "@pages/styleProject3";
 
 export default function PageProject3() {
   const [page, setPage] = useState([]);
@@ -22,12 +22,6 @@ export default function PageProject3() {
   return (
     <SPage>
       <div className="main">
-        <Left
-          title={page.title}
-          subtitle={page.subtitle}
-          description={page.description}
-          textColor={page.color1}
-        />
         <div className="flexRight">
           <Nav
             darkColor={page.color1}
@@ -41,6 +35,12 @@ export default function PageProject3() {
             navColor={page.color4}
           />
         </div>
+        <Left
+          title={page.title}
+          subtitle={page.subtitle}
+          description={page.description}
+          textColor={page.color1}
+        />
       </div>
       <Header backgroundColor={page.color1} />
       <Burger color={page.color1} />

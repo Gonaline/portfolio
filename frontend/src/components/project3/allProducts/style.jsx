@@ -3,6 +3,7 @@ import styled from "styled-components";
 export default styled.section`
   width: 70vw;
   min-height: 75vh;
+  padding-bottom: 15vh;
   display: flex;
   flex-direction: column;
   background: ${(props) => {
@@ -21,7 +22,7 @@ export default styled.section`
   }
 
   .list {
-    width: 95%;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;

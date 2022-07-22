@@ -1,11 +1,22 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SProductCard from "./style";
 
 export default function ProductCard({ backgroundColor, img, name, id }) {
+  const navigate = useNavigate();
+
+  function changeLocation(placeToGo) {
+    navigate(placeToGo, { replace: true });
+    window.location.reload();
+  }
+
   return (
     <SProductCard backgroundColor={backgroundColor} img={img}>
-      <Link to={`/project3/product/${id}`} className="link container">
+      <Link
+        to={`/project3/product/${id}`}
+        onClick={() => changeLocation(`//project3/product/${id}`)}
+        className="link container"
+      >
         <div className="text">
           <h3>{name}</h3>
         </div>

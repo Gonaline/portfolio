@@ -5,7 +5,7 @@ export default styled.nav`
     width: 70vw;
     height: 8vh;
     background-color: ${(props) => {
-      return `${props.darkOpacity}`;
+      return `${props.clearColor}`;
     }};
     display: flex;
     flex-wrap: nowrap;
@@ -58,7 +58,7 @@ export default styled.nav`
       justify-content: flex-start;
       align-items: center;
       flex-wrap: wrap;
-      width: 70vw;
+      width: 100%;
       height: 25vh;
       background: ${(props) => {
         return `${props.clearColor}`;
