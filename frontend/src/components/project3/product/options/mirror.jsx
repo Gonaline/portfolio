@@ -26,8 +26,8 @@ export default function Mirror({
           >
             <img
               className="imgOption"
-              alt="sens non inverse"
-              src="/src/assets/pictures/project3/options/_b.png"
+              alt="noMirror"
+              src="/src/assets/pictures/project3/options/nomirror.png"
             />
           </button>
           <button
@@ -38,8 +38,8 @@ export default function Mirror({
           >
             <img
               className="imgOption"
-              alt="sens non inverse"
-              src="/src/assets/pictures/project3/options/_t.png"
+              alt="mirror"
+              src="/src/assets/pictures/project3/options/mirror.png"
             />
           </button>
         </div>
