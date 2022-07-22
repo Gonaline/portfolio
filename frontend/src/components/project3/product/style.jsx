@@ -2,15 +2,12 @@ import styled from "styled-components";
 
 export default styled.section`
   width: 70vw;
-  min-height: 75vh;
-  background: ${(props) => {
-    return `${props.backgroundColor}`;
-  }};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
-
+  padding-top: 8vh;
+  padding-bottom: 9vh;
   .right {
     width: 50%;
     display: flex;
@@ -27,7 +24,7 @@ export default styled.section`
     font-style: italic;
     margin-bottom: 1.5vh;
     color: ${(props) => {
-      return `${props.color}`;
+      return `${props.darkColor}`;
     }};
   }
   .introduction {

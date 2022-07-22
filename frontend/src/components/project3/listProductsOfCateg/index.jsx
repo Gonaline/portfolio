@@ -6,7 +6,10 @@ import ProductCard from "../productCard";
 import SListProductsOfCateg from "./style";
 
 export default function ListProductsOfCateg({
-  backgroundColor,
+  color1,
+  whiteOpacity,
+  color4,
+  darkColor,
   mainCategoryId,
 }) {
   const [products, setProducts] = useState([]);
@@ -30,7 +33,7 @@ export default function ListProductsOfCateg({
 
   return (
     <SListProductsOfCateg
-      backgroundColor={backgroundColor}
+      whiteOpacity={whiteOpacity}
       imgCollection={`${ImgLink}${categoryImg}.png`}
     >
       <h3>Autres produits de la collection {categoryName}</h3>
@@ -41,6 +44,9 @@ export default function ListProductsOfCateg({
             id={product.id}
             img={`/src/assets/pictures/project3/products/${product.id}.png`}
             name={product.name}
+            color1={color1}
+            color4={color4}
+            darkColor={darkColor}
           />
         ))}
       </section>
@@ -49,6 +55,9 @@ export default function ListProductsOfCateg({
 }
 
 ListProductsOfCateg.propTypes = {
-  backgroundColor: PropTypes.string.isRequired,
   mainCategoryId: PropTypes.string.isRequired,
+  color1: PropTypes.string.isRequired,
+  whiteOpacity: PropTypes.string.isRequired,
+  color4: PropTypes.string.isRequired,
+  darkColor: PropTypes.string.isRequired,
 };

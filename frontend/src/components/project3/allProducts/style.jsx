@@ -6,9 +6,7 @@ export default styled.section`
   padding-bottom: 15vh;
   display: flex;
   flex-direction: column;
-  background: ${(props) => {
-    return `${props.backgroundColor}`;
-  }};
+
   .imgCollection {
     height: 8vh;
     display: flex;

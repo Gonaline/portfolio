@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import SColors2 from "./style";
 
 export default function Colors2({
+  whiteOpacity,
+  borderColor,
   optionChoice,
   fixedColor,
   colorChoice,
@@ -26,7 +28,7 @@ export default function Colors2({
   }, []);
 
   return (
-    <SColors2>
+    <SColors2 whiteOpacity={whiteOpacity} borderColor={borderColor}>
       <>
         <div className="titleOfOption">
           <h5>Choix du coloris : {colorChoice2}</h5>
@@ -35,6 +37,9 @@ export default function Colors2({
           {colors2.map((color) => {
             return (
               <button
+                className={
+                  `${color.img}` === `${colorChoice2}` ? "selected" : ""
+                }
                 key={color.name}
                 type="button"
                 value={color.name}
@@ -63,6 +68,8 @@ export default function Colors2({
 }
 
 Colors2.propTypes = {
+  whiteOpacity: PropTypes.string.isRequired,
+  borderColor: PropTypes.string.isRequired,
   optionChoice: PropTypes.string.isRequired,
   fixedColor: PropTypes.string.isRequired,
   colorChoice: PropTypes.string.isRequired,

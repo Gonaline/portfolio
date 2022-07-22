@@ -13,6 +13,7 @@ export default styled.section`
   flex-wrap: column;
   justify-content: center;
   align-items: center;
+  margin-top: 5vh;
 
   .container {
     display: none;
@@ -22,7 +23,9 @@ export default styled.section`
     border-radius: 50%;
 
     .container {
-      background-color: #ff697399;
+      background: ${(props) => {
+        return `${props.color4}`;
+      }};
       border-radius: 50%;
       display: flex;
       flex-direction: column;
@@ -51,10 +54,20 @@ export default styled.section`
       top: 2vh;
       width: 30px;
       aspect-ratio: 1/1;
-      background-color: red;
+      background: ${(props) => {
+        return `${props.color1}`;
+      }};
       border-radius: 0.5vw;
       color: var(--white);
       text-align: center;
+      :hover {
+        background: ${(props) => {
+          return `${props.darkColor}`;
+        }};
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.5);
+      }
     }
   }
 

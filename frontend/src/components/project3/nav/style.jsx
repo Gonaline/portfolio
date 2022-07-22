@@ -4,9 +4,10 @@ export default styled.nav`
   section {
     width: 70vw;
     height: 8vh;
-    background-color: ${(props) => {
-      return `${props.clearColor}`;
-    }};
+    background-color: #ffffff40;
+    -webkit-box-shadow: 0px 10px 13px -7px #00000077,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #00000077, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -18,38 +19,27 @@ export default styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    -webkit-box-shadow: 0px 10px 13px -7px #00000077,
-      5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 0px 10px 13px -7px #00000077, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-
-    .submenu {
-      display: none;
-    }
-
     .title {
       height: 8vh;
       display: flex;
       justify-content: center;
       align-items: center;
-
       h3 {
         font-size: 1.8rem;
         font-weight: bold;
         margin: 0 2.5vw;
       }
     }
+
+    .submenu {
+      display: none;
+    }
   }
 
   .categories:hover {
     background: ${(props) => {
-      return `${props.clearColor}`;
+      return `${props.openColor}`;
     }};
-
-    h3 {
-      color: ${(props) => {
-        return `${props.darkColor}`;
-      }};
-    }
     a {
       text-decoration: none;
     }
@@ -61,7 +51,7 @@ export default styled.nav`
       width: 100%;
       height: 25vh;
       background: ${(props) => {
-        return `${props.clearColor}`;
+        return `${props.openColor}`;
       }};
       -webkit-box-shadow: 0px 10px 13px -7px #00000077,
         5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -70,7 +60,7 @@ export default styled.nav`
 
       position: absolute;
       top: 8vh;
-      padding-left: 3vw;
+      padding-left: 2vw;
       .category {
         height: 6vh;
         padding: 0 3px;
@@ -92,7 +82,7 @@ export default styled.nav`
       }
       .category:hover {
         background: ${(props) => {
-          return `${props.whiteOpacity}`;
+          return `${props.clearColor}`;
         }};
         border-radius: 10px;
       }

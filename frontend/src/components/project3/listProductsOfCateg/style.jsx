@@ -4,7 +4,12 @@ export default styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: #ffdee0;
+  /* background: #be565d; */
+
+  background: ${(props) => {
+    return `${props.backgroundColor}`;
+  }};
+
   padding-bottom: 15vh;
   h3 {
     padding: 5vh 0 2.5vh 2.5vw;

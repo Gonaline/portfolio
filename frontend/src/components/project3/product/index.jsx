@@ -10,7 +10,13 @@ import ListProductsOfCateg from "../listProductsOfCateg";
 import Mirror from "./options/mirror";
 import SProduct from "./style";
 
-export default function Product({ backgroundColor, color }) {
+export default function Product({
+  color1,
+  color2,
+  whiteOpacity,
+  color4,
+  darkColor,
+}) {
   const { id } = useParams();
   const [sticker, setSticker] = useState([]);
   const [fixedColorsName, setFixedColorsName] = useState("");
@@ -54,7 +60,7 @@ export default function Product({ backgroundColor, color }) {
 
   return (
     <>
-      <SProduct backgroundColor={backgroundColor} color={color}>
+      <SProduct backgroundColor={color2} darkColor={darkColor}>
         <ProductImg
           sticker={sticker}
           bigImg={bigImg}
@@ -67,6 +73,8 @@ export default function Product({ backgroundColor, color }) {
           <p className="collection">Collection : {mainCategoryName}</p>
           <p className="introduction">{sticker.introduction}</p>
           <Colors
+            whiteOpacity={whiteOpacity}
+            borderColor={color1}
             optionChoice={optionChoice}
             fixedColor={fixedColorsName === null ? "" : `_${fixedColorsName}`}
             colors={colors}
@@ -78,6 +86,8 @@ export default function Product({ backgroundColor, color }) {
           />
           {sticker.colorChoiceNumber !== 1 && (
             <Colors2
+              whiteOpacity={whiteOpacity}
+              borderColor={color1}
               optionChoice={optionChoice}
               fixedColor={fixedColorsName === null ? "" : `_${fixedColorsName}`}
               colorChoice={colorChoice}
@@ -90,6 +100,8 @@ export default function Product({ backgroundColor, color }) {
           )}
           {sticker.option_Id > 0 && (
             <Option
+              whiteOpacity={whiteOpacity}
+              borderColor={color1}
               optionId={optionId}
               options={options}
               setOptions={setOptions}
@@ -105,6 +117,8 @@ export default function Product({ backgroundColor, color }) {
           )}
           {sticker.mirror === 1 && (
             <Mirror
+              whiteOpacity={whiteOpacity}
+              borderColor={color1}
               mirrorChoice={mirrorChoice}
               setMirrorChoice={setMirrorChoice}
             />
@@ -114,14 +128,21 @@ export default function Product({ backgroundColor, color }) {
         </div>
       </SProduct>
       <ListProductsOfCateg
-        backgroundColor={backgroundColor}
         mainCategoryId={mainCategoryId}
+        color1={color1}
+        color2={color2}
+        whiteOpacity={whiteOpacity}
+        color4={color4}
+        darkColor={darkColor}
       />
     </>
   );
 }
 
 Product.propTypes = {
-  backgroundColor: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  color1: PropTypes.string.isRequired,
+  color2: PropTypes.string.isRequired,
+  whiteOpacity: PropTypes.string.isRequired,
+  color4: PropTypes.string.isRequired,
+  darkColor: PropTypes.string.isRequired,
 };

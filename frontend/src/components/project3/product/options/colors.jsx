@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import SColors from "./style";
 
 export default function Colors({
+  whiteOpacity,
+  borderColor,
   optionChoice,
   fixedColor,
   colors,
@@ -15,6 +17,7 @@ export default function Colors({
   setBigImg,
 }) {
   const { id } = useParams();
+
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}${"/p3colorsbyproduct/"}${id}`)
@@ -25,7 +28,7 @@ export default function Colors({
   }, []);
 
   return (
-    <SColors>
+    <SColors whiteOpacity={whiteOpacity} borderColor={borderColor}>
       <>
         <div className="titleOfOption">
           <h5>Choix du coloris : {colorChoice}</h5>
@@ -34,6 +37,9 @@ export default function Colors({
           {colors.map((color) => {
             return (
               <button
+                className={
+                  `${color.img}` === `${colorChoice}` ? "selected" : ""
+                }
                 key={color.name}
                 type="button"
                 value={color.name}
@@ -62,6 +68,8 @@ export default function Colors({
 }
 
 Colors.propTypes = {
+  whiteOpacity: PropTypes.string.isRequired,
+  borderColor: PropTypes.string.isRequired,
   optionChoice: PropTypes.string.isRequired,
   fixedColor: PropTypes.string.isRequired,
   colors: PropTypes.string.isRequired,

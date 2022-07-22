@@ -1,15 +1,24 @@
 import PropTypes from "prop-types";
 import SMirror from "./style";
 
-export default function Mirror({ mirrorChoice, setMirrorChoice }) {
+export default function Mirror({
+  mirrorChoice,
+  setMirrorChoice,
+  whiteOpacity,
+  borderColor,
+}) {
   return (
-    <SMirror>
+    <SMirror whiteOpacity={whiteOpacity} borderColor={borderColor}>
       <>
         <div className="titleOfOption">
           <h5>Sens du sticker : {mirrorChoice ? "inversé" : "non inversé"}</h5>
         </div>
         <div className="choice">
           <button
+            // className={mirrorChoice ? "selected" : ""}
+            // className={
+            //   `${color.img}` === `${colorChoice2}` ? "selected" : ""
+            // }
             type="button"
             onClick={() => {
               setMirrorChoice(false);
@@ -40,6 +49,8 @@ export default function Mirror({ mirrorChoice, setMirrorChoice }) {
 }
 
 Mirror.propTypes = {
+  whiteOpacity: PropTypes.string.isRequired,
+  borderColor: PropTypes.string.isRequired,
   mirrorChoice: PropTypes.string.isRequired,
   setMirrorChoice: PropTypes.func.isRequired,
 };

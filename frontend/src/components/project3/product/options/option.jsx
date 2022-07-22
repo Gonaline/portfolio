@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import SOption from "./style";
 
 export default function Option({
+  whiteOpacity,
+  borderColor,
   optionId,
   options,
   setOptions,
@@ -32,7 +34,7 @@ export default function Option({
   }, [optionId]);
 
   return (
-    <SOption>
+    <SOption whiteOpacity={whiteOpacity} borderColor={borderColor}>
       <>
         <div className="titleOfOption">
           <h5>
@@ -44,6 +46,9 @@ export default function Option({
           {options.map((option) => {
             return (
               <button
+                className={
+                  `${option.codeImg}` === `${optionChoice}` ? "selected" : ""
+                }
                 key={option.name}
                 type="button"
                 value={option.optionDetailName}
@@ -72,6 +77,8 @@ export default function Option({
 }
 
 Option.propTypes = {
+  whiteOpacity: PropTypes.string.isRequired,
+  borderColor: PropTypes.string.isRequired,
   optionId: PropTypes.string.isRequired,
   options: PropTypes.string.isRequired,
   setOptions: PropTypes.func.isRequired,

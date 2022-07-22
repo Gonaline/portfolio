@@ -20,19 +20,16 @@ export default function PageProject3() {
   }, []);
 
   return (
-    <SPage>
+    <SPage backgroundColor={page.color2}>
       <div className="main">
         <div className="flexRight">
-          <Nav
-            darkColor={page.color1}
-            clearColor={page.color2}
-            whiteOpacity={page.color3}
-            darkOpacity={page.color4}
-          />
+          <Nav openColor={page.color2} clearColor={page.color3} />
           <Project3
-            backgroundColor={page.color2}
-            subMenuColor={page.color3}
-            navColor={page.color4}
+            color1={page.color1}
+            color2={page.color2}
+            whiteOpacity={page.color3}
+            color4={page.color4}
+            darkColor={page.color5}
           />
         </div>
         <Left

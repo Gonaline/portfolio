@@ -6,7 +6,13 @@ import ProductCard from "../productCard";
 
 import SProject3 from "./style";
 
-export default function Project3({ backgroundColor }) {
+export default function Project3({
+  color1,
+  color2,
+  whiteOpacity,
+  color4,
+  darkColor,
+}) {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [categoryName, setCategoryName] = useState("");
@@ -25,7 +31,7 @@ export default function Project3({ backgroundColor }) {
 
   return (
     <SProject3
-      backgroundColor={backgroundColor}
+      backgroundColor={color2}
       imgCollection={`${ImgLink}${categoryImg}.png`}
     >
       <div className="imgCollection">
@@ -39,6 +45,11 @@ export default function Project3({ backgroundColor }) {
             id={product.id}
             img={`/src/assets/pictures/project3/products/${product.id}.png`}
             name={product.name}
+            color1={color1}
+            color2={color2}
+            whiteOpacity={whiteOpacity}
+            color4={color4}
+            darkColor={darkColor}
           />
         ))}
       </section>
@@ -47,5 +58,9 @@ export default function Project3({ backgroundColor }) {
 }
 
 Project3.propTypes = {
-  backgroundColor: PropTypes.string.isRequired,
+  color1: PropTypes.string.isRequired,
+  color2: PropTypes.string.isRequired,
+  whiteOpacity: PropTypes.string.isRequired,
+  color4: PropTypes.string.isRequired,
+  darkColor: PropTypes.string.isRequired,
 };

@@ -8,6 +8,9 @@ export default styled.body`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: ${(props) => {
+      return `${props.backgroundColor}`;
+    }};
   }
   .flexRight {
     position: relative;

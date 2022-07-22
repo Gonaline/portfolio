@@ -4,12 +4,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import SNav from "./style";
 
-export default function Nav({
-  clearColor,
-  darkColor,
-  whiteOpacity,
-  darkOpacity,
-}) {
+export default function Nav({ openColor, clearColor }) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -21,12 +16,7 @@ export default function Nav({
   }, []);
 
   return (
-    <SNav
-      clearColor={clearColor}
-      darkColor={darkColor}
-      whiteOpacity={whiteOpacity}
-      darkOpacity={darkOpacity}
-    >
+    <SNav openColor={openColor} clearColor={clearColor}>
       <section>
         <div className="menu categories">
           <div className="title">
@@ -56,8 +46,6 @@ export default function Nav({
 }
 
 Nav.propTypes = {
+  openColor: PropTypes.string.isRequired,
   clearColor: PropTypes.string.isRequired,
-  darkColor: PropTypes.string.isRequired,
-  whiteOpacity: PropTypes.string.isRequired,
-  darkOpacity: PropTypes.string.isRequired,
 };

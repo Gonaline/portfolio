@@ -2,7 +2,14 @@ import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
 import SProductCard from "./style";
 
-export default function ProductCard({ backgroundColor, img, name, id }) {
+export default function ProductCard({
+  img,
+  name,
+  id,
+  color1,
+  color4,
+  darkColor,
+}) {
   const navigate = useNavigate();
 
   function changeLocation(placeToGo) {
@@ -11,10 +18,15 @@ export default function ProductCard({ backgroundColor, img, name, id }) {
   }
 
   return (
-    <SProductCard backgroundColor={backgroundColor} img={img}>
+    <SProductCard
+      img={img}
+      color1={color1}
+      color4={color4}
+      darkColor={darkColor}
+    >
       <Link
         to={`/project3/product/${id}`}
-        onClick={() => changeLocation(`//project3/product/${id}`)}
+        onClick={() => changeLocation(`/project3/product/${id}`)}
         className="link container"
       >
         <div className="text">
@@ -29,8 +41,10 @@ export default function ProductCard({ backgroundColor, img, name, id }) {
 }
 
 ProductCard.propTypes = {
-  backgroundColor: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  color1: PropTypes.string.isRequired,
+  color4: PropTypes.string.isRequired,
+  darkColor: PropTypes.string.isRequired,
 };
