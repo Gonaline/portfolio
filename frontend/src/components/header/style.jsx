@@ -1,17 +1,24 @@
 import styled from "styled-components";
 
-export default styled.header`
-  height: 15vh;
-  width: 100vw;
+export default styled.nav`
   position: fixed;
-  background: ${(props) => {
-    return `${props.backgroundColor}`;
-  }};
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  .link {
+  * {
     text-decoration: none;
+  }
+  section {
+    width: 100vw;
+    height: 15vh;
+    background: ${(props) => {
+      return `${props.backgroundColor}`;
+    }};
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .right {
+    display: flex;
+    margin-right: 3vw;
   }
   .me {
     height: 15vh;
@@ -28,21 +35,68 @@ export default styled.header`
       color: var(--white);
     }
   }
-  .nav1 {
+
+  .categories {
+    height: 15vh;
+    width: 15vw;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
     justify-content: center;
-    margin-right: 3vw;
+    align-items: left;
+    .title {
+      height: 15vh;
+      width: 15vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: var(--white);
+      }
+    }
+    .submenu {
+      display: none;
+    }
   }
-  h3 {
-    text-align: center;
-    margin: 0 1vw 1.5vw 1vw;
-    color: var(--white);
-  }
-  nav .link:hover {
-    border-bottom: var(--darkColor) 0.5vh solid;
+  .categories:hover {
+    background: var(--darkColor);
+    .submenu {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 15vw;
+      background: var(--darkColor);
+      color: var(--white);
+      position: absolute;
+      top: 15vh;
+      padding-bottom: 2vh;
+      .link {
+        width: 90%;
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        h4 {
+          font-size: 1.5rem;
+          color: var(--white);
+          color: ${(props) => {
+            return `${props.backgroundColor}`;
+          }};
+        }
+      }
+      .link:hover {
+        background: #ffffff50;
+      }
+    }
   }
   @media screen and (max-width: 700px) {
-    display: none;
+    width: 100vw;
+    height: 77vh;
+    padding-bottom: 9vh;
   }
 `;

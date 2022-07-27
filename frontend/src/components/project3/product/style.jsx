@@ -2,105 +2,47 @@ import styled from "styled-components";
 
 export default styled.section`
   width: 70vw;
-  height: 75vh;
-  padding-top: 10vh;
-  background: ${(props) => {
-    return `${props.backgroundColor}`;
-  }};
   display: flex;
-  justify-content: left;
-  align-items: stretch;
-  .img {
-    height: 55vh;
-    aspect-ratio: 1/1;
-    background: ${(props) => {
-      return `url(${props.img}) no-repeat`;
-    }};
-    background-size: cover;
-    margin: 0 3vw;
-    .technicalSheet {
-      height: 10vh;
-      aspect-ratio: 1/1;
-      background: ${(props) => {
-        return `url(${props.technicalSheet}) no-repeat`;
-      }};
-      background-size: cover;
-      margin: 3%;
-    }
-    .bigImg {
-      height: 10vh;
-      aspect-ratio: 1/1;
-      background: ${(props) => {
-        return `url(${props.img}) no-repeat`;
-      }};
-      background-size: cover;
-      margin: 3%;
-    }
-  }
-
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-top: 8vh;
+  padding-bottom: 9vh;
   .right {
-    margin-right: 3vw;
-  }
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  h4 {
-    font-size: 1.2rem;
-    line-height: 1.3rem;
-    margin-bottom: 1rem;
-  }
-  h5,
-  h6 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  p {
-    font-size: 0.8rem;
-  }
-  .colorsChoice1 {
-    background-color: var(--white);
+    width: 50%;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    /* justify-content: flex-start;
-    align-items: left; */
+    justify-content: flex-start;
+  }
 
-    h5 {
-      padding: 10px 0 0px 10px;
-      background-color: pink;
-    }
-    .choices {
-      margin-top: -10px;
-      background-color: #cb2c46;
-      display: flex;
-      justify-content: left;
-      align-items: center;
-
-      button {
-        width: 45px;
-        aspect-ratio: 1/1;
-        border: none;
-        background: none;
-        .textColor {
-          display: none;
-        }
-      }
-      /* button:hover {
-        .textColor {
-          display: flex;
-          position: relative;
-          top: 15px;
-          left: 50px;
-          background-color: var(--white);
-          border: 0.2px grey solid;
-        } */
-      }
-
-      .imgColor {
-        width: 100%;
-      }
-    }
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  .collection {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 1.5vh;
+    color: ${(props) => {
+      return `${props.darkColor}`;
+    }};
+  }
+  .introduction {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin-bottom: 1.5vh;
+  }
+  .size,
+  .textColors {
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-bottom: 1.5vh;
+    line-height: 1rem;
+  }
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5vh;
   }
 
   @media screen and (max-width: 700px) {

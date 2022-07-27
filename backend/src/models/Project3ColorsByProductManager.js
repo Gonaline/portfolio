@@ -5,39 +5,20 @@ class Project3ColorsByProduct extends AbstractManager {
 
   findAll() {
     return this.connection.query(
-      `SELECT phc.product_id, c.name, c.img
+      `SELECT phc.product_id, c.name, c.img, c.order
       FROM p3product_has_color AS phc
       INNER JOIN p3color AS c ON c.id = phc.color_id
-      ORDER BY phc.product_id;`
+      ORDER BY c.order, phc.product_id;`
     );
   }
-
-  // find(id) {
-  //   return this.connection.query(
-  //     `SELECT c.name, phc.product_id FROM p3product_has_color AS phc
-  //      INNER JOIN p3color AS c ON c.id = phc.color_id
-  //      WHERE phc.product_id = ?`,
-  //     [id]
-  //   );
-  // }
 
   find(id) {
     return this.connection.query(
-      `SELECT c.name, phc.product_id FROM p3product_has_color AS phc
-    INNER JOIN p3color AS c ON c.id = phc.color_id where phc.product_id = ?`,
+      `SELECT c.name, c.img, phc.product_id FROM p3product_has_color AS phc
+      INNER JOIN p3color AS c ON c.id = phc.color_id where phc.product_id = ? ORDER BY c.order`,
       [id]
     );
   }
-
-  // find(id) {
-  //   return this.connection.query(
-  //     `SELECT phc.productid, c.name
-  //     FROM p3producthascolorgroup AS phc
-  //      INNER JOIN p3colorgroup AS c ON c.id = phc.colorgroupid
-  //      WHERE phc.productid = ?`,
-  //     [id]
-  //   );
-  // }
 }
 
 module.exports = Project3ColorsByProduct;

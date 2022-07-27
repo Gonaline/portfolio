@@ -5,18 +5,22 @@ class Project3ProductByCategoryManager extends AbstractManager {
 
   findAll() {
     return this.connection.query(
-      `SELECT p.name, p.id, chp.categoryid
-      FROM p3categoryhasproduct AS chp
-      INNER JOIN p3product AS p ON p.id=chp.productid;`
+      `SELECT p.id, p.name, c.categoryName, c.categoryImg, c.id as categoryId
+      FROM p3product_has_category AS phc
+      INNER JOIN p3product AS p ON p.id=phc.product_id
+      INNER JOIN p3category AS c ON c.id = phc.category_id;`
     );
   }
 
-  // find(id) {
-  //   return this.connection.query(
-  //     `select * from  ${this.table} where category_id = ?`,
-  //     [id]
-  //   );
-  // }
+  find(id) {
+    return this.connection.query(
+      `SELECT p.id, p.name, c.categoryName, c.categoryImg, c.id as categoryId
+      FROM p3product_has_category AS phc
+      INNER JOIN p3product AS p ON p.id=phc.product_id
+      INNER JOIN p3category AS c ON c.id = phc.category_id where c.id = ?`,
+      [id]
+    );
+  }
 }
 
 module.exports = Project3ProductByCategoryManager;

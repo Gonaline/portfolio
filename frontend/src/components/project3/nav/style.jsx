@@ -1,46 +1,45 @@
 import styled from "styled-components";
 
 export default styled.nav`
-  min-width: 100%;
-  max-width: 100%;
-  height: 10vh;
-  background: ${(props) => {
-    return `${props.navColor}`;
-  }};
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
-
+  section {
+    width: 70vw;
+    height: 8vh;
+    background-color: #ffffff40;
+    -webkit-box-shadow: 0px 10px 13px -7px #00000077,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #00000077, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
   .categories {
-    .submenu {
-      display: none;
-    }
+    height: 8vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
     .title {
-      height: 10vh;
+      height: 8vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 3vw;
       h3 {
         font-size: 1.8rem;
         font-weight: bold;
+        margin: 0 2.5vw;
       }
+    }
+
+    .submenu {
+      display: none;
     }
   }
 
   .categories:hover {
-    background: var(--white);
-    h3 {
-      color: ${(props) => {
-        return `${props.navColor}`;
-      }};
-    }
+    background: ${(props) => {
+      return `${props.openColor}`;
+    }};
     a {
       text-decoration: none;
     }
@@ -49,12 +48,19 @@ export default styled.nav`
       justify-content: flex-start;
       align-items: center;
       flex-wrap: wrap;
-      width: 70vw;
+      width: 100%;
       height: 25vh;
-      background: var(--white);
+      background: ${(props) => {
+        return `${props.openColor}`;
+      }};
+      -webkit-box-shadow: 0px 10px 13px -7px #00000077,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #00000077,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+
       position: absolute;
-      top: 10vh;
-      padding-left: 3vw;
+      top: 8vh;
+      padding-left: 2vw;
       .category {
         height: 6vh;
         padding: 0 3px;
@@ -75,9 +81,10 @@ export default styled.nav`
         }
       }
       .category:hover {
-        background-color: #ff697350;
+        background: ${(props) => {
+          return `${props.clearColor}`;
+        }};
         border-radius: 10px;
-        box-shadow: 6px 6px 2px 1px #ff6973;
       }
     }
   }
