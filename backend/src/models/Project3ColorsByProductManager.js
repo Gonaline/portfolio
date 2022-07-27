@@ -5,17 +5,17 @@ class Project3ColorsByProduct extends AbstractManager {
 
   findAll() {
     return this.connection.query(
-      `SELECT phc.product_id, c.name, c.img
+      `SELECT phc.product_id, c.name, c.img, c.order
       FROM p3product_has_color AS phc
       INNER JOIN p3color AS c ON c.id = phc.color_id
-      ORDER BY phc.product_id;`
+      ORDER BY c.order, phc.product_id;`
     );
   }
 
   find(id) {
     return this.connection.query(
       `SELECT c.name, c.img, phc.product_id FROM p3product_has_color AS phc
-    INNER JOIN p3color AS c ON c.id = phc.color_id where phc.product_id = ?`,
+      INNER JOIN p3color AS c ON c.id = phc.color_id where phc.product_id = ? ORDER BY c.order`,
       [id]
     );
   }
