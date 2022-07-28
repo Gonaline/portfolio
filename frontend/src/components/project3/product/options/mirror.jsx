@@ -15,10 +15,7 @@ export default function Mirror({
         </div>
         <div className="choice">
           <button
-            // className={mirrorChoice ? "selected" : ""}
-            // className={
-            //   `${color.img}` === `${colorChoice2}` ? "selected" : ""
-            // }
+            className={!mirrorChoice ? "selected" : ""}
             type="button"
             onClick={() => {
               setMirrorChoice(false);
@@ -31,6 +28,7 @@ export default function Mirror({
             />
           </button>
           <button
+            className={mirrorChoice ? "selected" : ""}
             type="button"
             onClick={() => {
               setMirrorChoice(true);
