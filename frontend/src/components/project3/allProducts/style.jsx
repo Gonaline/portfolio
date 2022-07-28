@@ -26,6 +26,7 @@ export default styled.section`
     justify-content: flex-start;
     align-items: center;
     margin: auto;
+    margin-top: 4vh;
   }
 
   @media screen and (max-width: 700px) {

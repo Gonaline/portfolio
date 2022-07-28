@@ -11,7 +11,7 @@ export default styled.section`
   }};
 
   padding-bottom: 15vh;
-  h3 {
+  .otherProducts {
     padding: 5vh 0 2.5vh 2.5vw;
     font-size: 1.5rem;
   }
@@ -19,7 +19,7 @@ export default styled.section`
     width: 95%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: auto;
   }
