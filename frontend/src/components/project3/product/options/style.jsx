@@ -16,12 +16,15 @@ export default styled.section`
   .choice {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
 
     button {
       width: 40px;
       height: 40px;
       margin-right: 0.5vw;
+      margin-bottom: 0.5vh;
+
       border: none;
       background: none;
       border-radius: 20px;

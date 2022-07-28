@@ -36,7 +36,9 @@ export default function ListProductsOfCateg({
       whiteOpacity={whiteOpacity}
       imgCollection={`${ImgLink}${categoryImg}.png`}
     >
-      <h3>Autres produits de la collection {categoryName}</h3>
+      <h3 className="otherProducts">
+        Autres produits de la collection {categoryName}
+      </h3>
       <section className="list">
         {products.map((product) => (
           <ProductCard

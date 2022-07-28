@@ -42,6 +42,11 @@ export default function Burger({ ...props }) {
             PROJECT#2
           </Link>
         </li>
+        <li>
+          <Link className="link" to="/project3/0">
+            PROJECT#3
+          </Link>
+        </li>
       </ul>
     </SBurger>
   );

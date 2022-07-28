@@ -29,6 +29,10 @@ export default function Project3({
       });
   }, [id]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <SProject3
       backgroundColor={color2}

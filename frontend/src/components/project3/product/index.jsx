@@ -58,6 +58,10 @@ export default function Product({
       });
   }, [mainCategoryId]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   return (
     <>
       <SProduct backgroundColor={color2} darkColor={darkColor}>

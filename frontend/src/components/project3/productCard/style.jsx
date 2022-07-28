@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export default styled.section`
+export default styled.article`
   background: ${(props) => {
     return `url(${props.img}) no-repeat`;
   }};
   border-radius: 10%;
   width: 19%;
   aspect-ratio: 1/1;
-  margin: 2%;
+  margin: 3%;
   background-size: contain;
   display: flex;
   flex-wrap: column;
@@ -21,7 +21,6 @@ export default styled.section`
 
   :hover {
     border-radius: 50%;
-
     .container {
       background: ${(props) => {
         return `${props.color4}`;
@@ -29,7 +28,7 @@ export default styled.section`
       border-radius: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       width: 100%;
       aspect-ratio: 1/1;
