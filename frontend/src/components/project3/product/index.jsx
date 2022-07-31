@@ -65,6 +65,11 @@ export default function Product({
   return (
     <>
       <SProduct backgroundColor={color2} darkColor={darkColor}>
+        <div className="rightMobile">
+          <h2 className="title">{sticker.name}</h2>
+          <p className="collection">Collection : {mainCategoryName}</p>
+          <p className="introduction">{sticker.introduction}</p>
+        </div>
         <ProductImg
           sticker={sticker}
           bigImg={bigImg}

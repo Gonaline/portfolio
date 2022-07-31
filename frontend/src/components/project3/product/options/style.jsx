@@ -24,16 +24,12 @@ export default styled.section`
       height: 40px;
       margin-right: 0.5vw;
       margin-bottom: 0.5vh;
-
       border: none;
       background: none;
       border-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
-      /* background: ${(props) => {
-        return `${props.borderColor}`;
-      }}; */
       .textOption {
         display: none;
       }
@@ -44,13 +40,10 @@ export default styled.section`
     }
 
     button:focus,
-    button:hover {
-      /* border: ${(props) => {
-        return `solid 3px ${props.borderColor}`;
-      }}; */
+    button:hover,
+    button:active {
       background: var(--darkColor);
       border: solid 2px var(--darkColor);
-
       -webkit-box-shadow: 0px 10px 13px -7px #000000,
         5px 5px 15px 5px rgba(0, 0, 0, 0);
       box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -65,6 +58,27 @@ export default styled.section`
     }
   }
 
-  */ @media screen and (max-width: 700px) {
+  @media screen and (max-width: 700px) {
+    padding: 1vh 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .choice {
+      width: 80vw;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+
+      button {
+        width: 11vw;
+        height: 11vw;
+        border-radius: 5.5vw;
+        margin: 1.1vw;
+      }
+      .imgOption {
+        width: 11vw;
+      }
+    }
   }
 `;

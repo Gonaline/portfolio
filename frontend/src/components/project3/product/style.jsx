@@ -44,7 +44,31 @@ export default styled.section`
     font-weight: bold;
     margin-bottom: 1.5vh;
   }
+  .rightMobile {
+    display: none;
+  }
 
   @media screen and (max-width: 700px) {
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    .rightMobile {
+      width: 90vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 2vh;
+    }
+    .right {
+      width: 90vw;
+      .title,
+      .collection,
+      .introduction {
+        display: none;
+      }
+    }
   }
 `;
