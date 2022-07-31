@@ -21,7 +21,14 @@ export default function PageProject3() {
 
   return (
     <SPage backgroundColor={page.color2}>
+      <Burger color={page.color1} />
       <div className="main">
+        <Left
+          title={page.title}
+          subtitle={page.subtitle}
+          description={page.description}
+          textColor={page.color1}
+        />
         <div className="flexRight">
           <Nav openColor={page.color2} clearColor={page.color3} />
           <Project3
@@ -32,15 +39,8 @@ export default function PageProject3() {
             darkColor={page.color5}
           />
         </div>
-        <Left
-          title={page.title}
-          subtitle={page.subtitle}
-          description={page.description}
-          textColor={page.color1}
-        />
       </div>
       <Header backgroundColor={page.color1} />
-      <Burger color={page.color1} />
       <Footer backgroundColor={page.color1} />
     </SPage>
   );

@@ -17,30 +17,28 @@ export default function Nav({ openColor, clearColor }) {
 
   return (
     <SNav openColor={openColor} clearColor={clearColor}>
-      <section>
-        <div className="menu categories">
-          <div className="title">
-            <h3>COLLECTIONS</h3>
-          </div>
-          <div className="submenu">
-            {categories.map((category) => (
-              <NavLink
-                to={`/project3/${category.id}`}
-                className="link"
-                id={category.id}
-              >
-                <div className="category">
-                  <img
-                    src={`/src/assets/pictures/project3/${category.categoryImg}.png`}
-                    alt={category.categoryName}
-                  />
-                  <h4>{category.categoryName}</h4>
-                </div>
-              </NavLink>
-            ))}
-          </div>
+      <div className="collections menu">
+        <div className="title">
+          <h3>COLLECTIONS</h3>
         </div>
-      </section>
+        <div className="submenu">
+          {categories.map((category) => (
+            <NavLink
+              to={`/project3/${category.id}`}
+              className="link"
+              id={category.id}
+            >
+              <div className="category">
+                <img
+                  src={`/src/assets/pictures/project3/${category.categoryImg}.png`}
+                  alt={category.categoryName}
+                />
+                <h4>{category.categoryName}</h4>
+              </div>
+            </NavLink>
+          ))}
+        </div>
+      </div>
     </SNav>
   );
 }

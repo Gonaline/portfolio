@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export default styled.section`
   background-color: var(--darkColor);
-
-  min-width: 30vw;
+  /* min-width: 30vw;
   min-height: 75vh;
   max-width: 30vw;
-  max-height: 75vh;
+  max-height: 75vh; */
   width: 30vw;
   height: 75vh;
   position: fixed;
@@ -32,11 +31,13 @@ export default styled.section`
   }
   @media screen and (max-width: 700px) {
     position: static;
-
-    width: 100%;
+    min-width: 100vw;
+    max-width: 100vw;
+    width: 100vw;
     height: auto;
     margin-top: 14vh;
     align-items: flex-start;
+    padding-top: 3vh;
 
     p {
       margin-bottom: 3vh;

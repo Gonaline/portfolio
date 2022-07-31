@@ -95,8 +95,6 @@ export default styled.nav`
     }
   }
   @media screen and (max-width: 700px) {
-    width: 100vw;
-    height: 77vh;
-    padding-bottom: 9vh;
+    display: none;
   }
 `;
