@@ -8,14 +8,15 @@ export default styled.section`
   flex-direction: column;
 
   .list {
-    background-color: #00ff2a;
-    width: 85%;
+    background: ${(props) => {
+      return `${props.whiteOpacity}`;
+    }};
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     margin: auto;
-    margin-top: 4vh;
   }
 
   @media screen and (max-width: 700px) {

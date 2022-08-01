@@ -48,6 +48,17 @@ export default styled.section`
     display: none;
   }
 
+  .list {
+    background: ${(props) => {
+      return `${props.whiteOpacity}`;
+    }};
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+  }
   @media screen and (max-width: 700px) {
     width: 100vw;
     flex-direction: column;
@@ -69,6 +80,13 @@ export default styled.section`
       .introduction {
         display: none;
       }
+    }
+    .list {
+      width: 100%;
+      justify-content: space-around;
+    }
+    .empty {
+      width: 47%;
     }
   }
 `;

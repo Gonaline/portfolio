@@ -2,6 +2,8 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import CategoryTitle from "../categoryTitle";
+
 import ProductCard from "../productCard";
 
 import SProject3 from "./style";
@@ -13,11 +15,11 @@ export default function Project3({
   color4,
   darkColor,
 }) {
-  const { id } = useParams();
+  const { id = "" } = useParams();
   const [products, setProducts] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [categoryImg, setCategoryImg] = useState("");
-  const ImgLink = "../src/assets/pictures/project3/";
+  const imgCategLink = "/src/assets/pictures/project3/";
 
   useEffect(() => {
     axios
@@ -34,14 +36,12 @@ export default function Project3({
   }, []);
 
   return (
-    <SProject3
-      backgroundColor={color2}
-      imgCollection={`${ImgLink}${categoryImg}.png`}
-    >
-      <div className="imgCollection">
-        <img src={`${ImgLink}${categoryImg}.png`} alt="" />
-        <h3>{categoryName}</h3>
-      </div>
+    <SProject3 backgroundColor={color2}>
+      <CategoryTitle
+        categoryImgLink={`${imgCategLink}${categoryImg}.png`}
+        categoryName={categoryName}
+        whiteOpacity={whiteOpacity}
+      />
       <section className="list">
         {products.map((product) => (
           <ProductCard
