@@ -4,8 +4,6 @@ export default styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* background: #be565d; */
-
   background: ${(props) => {
     return `${props.whiteOpacity}`;
   }};
@@ -26,7 +24,13 @@ export default styled.section`
 
   @media screen and (max-width: 700px) {
     width: 100vw;
-    height: 77vh;
-    padding-bottom: 9vh;
+    padding-bottom: 12vh;
+    .list {
+      width: 100%;
+      justify-content: space-around;
+    }
+    .empty {
+      width: 47%;
+    }
   }
 `;

@@ -91,7 +91,8 @@ export default styled.nav`
   }
 
   @media screen and (max-width: 700px) {
-    width: 100vw;
+    display: none;
+    /* width: 100vw;
     flex-wrap: wrap;
     align-items: flex-start;
 
@@ -135,6 +136,6 @@ export default styled.nav`
           }
         }
       }
-    }
+    } */
   }
 `;

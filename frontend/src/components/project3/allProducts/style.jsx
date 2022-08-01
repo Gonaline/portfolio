@@ -7,19 +7,8 @@ export default styled.section`
   display: flex;
   flex-direction: column;
 
-  .imgCollection {
-    height: 8vh;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding: 5vh 0 0 2.5vw;
-    img {
-      height: 100%;
-      margin-right: 1vw;
-    }
-  }
-
   .list {
+    background-color: #00ff2a;
     width: 85%;
     display: flex;
     flex-wrap: wrap;
@@ -31,7 +20,13 @@ export default styled.section`
 
   @media screen and (max-width: 700px) {
     width: 100vw;
-    height: 77vh;
-    padding-bottom: 9vh;
+    padding-bottom: 12vh;
+    .list {
+      width: 100%;
+      justify-content: space-around;
+    }
+    .empty {
+      width: 47%;
+    }
   }
 `;

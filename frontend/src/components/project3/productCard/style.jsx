@@ -71,5 +71,22 @@ export default styled.article`
   }
 
   @media screen and (max-width: 700px) {
+    width: 47%;
+    border-radius: 10%;
+    aspect-ratio: 1/1;
+    margin: 0%;
+    background-size: contain;
+    display: flex;
+    flex-wrap: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    .text {
+      display: block;
+      h3 {
+        color: black;
+      }
+      background-color: red;
+    }
   }
 `;
