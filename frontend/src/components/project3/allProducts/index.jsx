@@ -40,7 +40,8 @@ export default function Project3({
       <CategoryTitle
         categoryImgLink={`${imgCategLink}${categoryImg}.png`}
         categoryName={categoryName}
-        whiteOpacity={whiteOpacity}
+        backgroundColor={color2}
+        displayH5="none"
       />
       <section className="list">
         {products.map((product) => (
@@ -56,6 +57,9 @@ export default function Project3({
             darkColor={darkColor}
           />
         ))}
+        <div className="empty" />
+        <div className="empty" />
+        <div className="empty" />
       </section>
     </SProject3>
   );

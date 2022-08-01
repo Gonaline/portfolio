@@ -6,6 +6,8 @@ export default styled.section`
   padding-bottom: 15vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   .list {
     background: ${(props) => {
@@ -27,7 +29,7 @@ export default styled.section`
       justify-content: space-around;
     }
     .empty {
-      width: 47%;
+      width: 45%;
     }
   }
 `;

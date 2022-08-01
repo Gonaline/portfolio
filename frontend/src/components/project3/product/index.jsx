@@ -75,81 +75,84 @@ export default function Product({
       backgroundColor={color2}
       darkColor={darkColor}
       whiteOpacity={whiteOpacity}
+      displayH5=""
     >
-      <div className="rightMobile">
-        <h2 className="title">{sticker.name}</h2>
-        <p className="collection">Collection : {mainCategoryName}</p>
-        <p className="introduction">{sticker.introduction}</p>
-      </div>
-      <ProductImg
-        sticker={sticker}
-        bigImg={bigImg}
-        bigImgOrientation={mirrorChoice}
-        setBigImg={setBigImg}
-        imgLink={imgLink}
-      />
-      <div className="right">
-        <h2 className="title">{sticker.name}</h2>
-        <p className="collection">Collection : {mainCategoryName}</p>
-        <p className="introduction">{sticker.introduction}</p>
-        <Colors
-          whiteOpacity={whiteOpacity}
-          borderColor={color1}
-          optionChoice={optionChoice}
-          fixedColor={fixedColorsName === null ? "" : `_${fixedColorsName}`}
-          colors={colors}
-          setColors={setColors}
-          colorChoice={colorChoice}
-          setColorChoice={setColorChoice}
-          colorChoice2={colorChoice2}
+      <div className="product">
+        <div className="rightMobile">
+          <h2 className="title">{sticker.name}</h2>
+          <p className="collection">Collection : {mainCategoryName}</p>
+          <p className="introduction">{sticker.introduction}</p>
+        </div>
+        <ProductImg
+          sticker={sticker}
+          bigImg={bigImg}
+          bigImgOrientation={mirrorChoice}
           setBigImg={setBigImg}
+          imgLink={imgLink}
         />
-        {sticker.colorChoiceNumber !== 1 && (
-          <Colors2
+        <div className="right">
+          <h2 className="title">{sticker.name}</h2>
+          <p className="collection">Collection : {mainCategoryName}</p>
+          <p className="introduction">{sticker.introduction}</p>
+          <Colors
             whiteOpacity={whiteOpacity}
             borderColor={color1}
             optionChoice={optionChoice}
             fixedColor={fixedColorsName === null ? "" : `_${fixedColorsName}`}
+            colors={colors}
+            setColors={setColors}
             colorChoice={colorChoice}
-            colors2={colors2}
-            setColors2={setColors2}
+            setColorChoice={setColorChoice}
             colorChoice2={colorChoice2}
-            setColorChoice2={setColorChoice2}
             setBigImg={setBigImg}
           />
-        )}
-        {sticker.option_Id > 0 && (
-          <Option
-            whiteOpacity={whiteOpacity}
-            borderColor={color1}
-            optionId={optionId}
-            options={options}
-            setOptions={setOptions}
-            optionChoice={optionChoice}
-            setOptionChoice={setOptionChoice}
-            optionName={optionName}
-            setOptionName={setOptionName}
-            setBigImg={setBigImg}
-            fixedColor={fixedColorsName === null ? "" : `_${fixedColorsName}`}
-            colorChoice={colorChoice}
-            colorChoice2={colorChoice2}
-          />
-        )}
-        {sticker.mirror === 1 && (
-          <Mirror
-            whiteOpacity={whiteOpacity}
-            borderColor={color1}
-            mirrorChoice={mirrorChoice}
-            setMirrorChoice={setMirrorChoice}
-          />
-        )}
-        <p className="size">Format : {sticker.textSize}</p>
-        <p className="price">Prix : {sticker.price}€</p>
+          {sticker.colorChoiceNumber !== 1 && (
+            <Colors2
+              whiteOpacity={whiteOpacity}
+              borderColor={color1}
+              optionChoice={optionChoice}
+              fixedColor={fixedColorsName === null ? "" : `_${fixedColorsName}`}
+              colorChoice={colorChoice}
+              colors2={colors2}
+              setColors2={setColors2}
+              colorChoice2={colorChoice2}
+              setColorChoice2={setColorChoice2}
+              setBigImg={setBigImg}
+            />
+          )}
+          {sticker.option_Id > 0 && (
+            <Option
+              whiteOpacity={whiteOpacity}
+              borderColor={color1}
+              optionId={optionId}
+              options={options}
+              setOptions={setOptions}
+              optionChoice={optionChoice}
+              setOptionChoice={setOptionChoice}
+              optionName={optionName}
+              setOptionName={setOptionName}
+              setBigImg={setBigImg}
+              fixedColor={fixedColorsName === null ? "" : `_${fixedColorsName}`}
+              colorChoice={colorChoice}
+              colorChoice2={colorChoice2}
+            />
+          )}
+          {sticker.mirror === 1 && (
+            <Mirror
+              whiteOpacity={whiteOpacity}
+              borderColor={color1}
+              mirrorChoice={mirrorChoice}
+              setMirrorChoice={setMirrorChoice}
+            />
+          )}
+          <p className="size">Format : {sticker.textSize}</p>
+          <p className="price">Prix : {sticker.price}€</p>
+        </div>
       </div>
       <CategoryTitle
         categoryImgLink={`${imgCategLink}${mainCategoryImg}.png`}
         categoryName={mainCategoryName}
-        whiteOpacity={whiteOpacity}
+        backgroundColor={whiteOpacity}
       />
       <section className="list">
         {products.map((product) => (
