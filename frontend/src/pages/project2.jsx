@@ -1,5 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import dataPages from "@assets/data/pages";
 import Project2 from "@components/project2";
 import Header from "@components/header";
 import Burger from "@components/burger";
@@ -8,15 +7,7 @@ import Left from "@components/left";
 import SPage from "@pages/style";
 
 export default function PageProject2() {
-  const [page, setPage] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/page/project2"}`)
-      .then(({ data }) => {
-        setPage(data);
-      });
-  }, []);
+  const page = dataPages[2];
 
   return (
     <SPage>

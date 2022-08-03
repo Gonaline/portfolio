@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import dataPages from "@assets/data/pages";
 import Product from "@components/project3/product";
 import Header from "@components/header";
 import Burger from "@components/burger";
@@ -9,15 +8,7 @@ import Nav from "@components/project3/nav";
 import SPage from "@pages/styleProject3";
 
 export default function PageProject3Product() {
-  const [page, setPage] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/page/project3"}`)
-      .then(({ data }) => {
-        setPage(data);
-      });
-  }, []);
+  const page = dataPages[3];
 
   return (
     <SPage backgroundColor={page.color2}>

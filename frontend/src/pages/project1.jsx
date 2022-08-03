@@ -1,6 +1,5 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { CtxProvider } from "@services/context/project1Ctx";
+import dataPages from "@assets/data/pages";
 import Project1 from "@components/project1";
 import Header from "@components/header";
 import Burger from "@components/burger";
@@ -9,15 +8,7 @@ import Left from "@components/left";
 import SPage from "@pages/style";
 
 export default function PageProject1() {
-  const [page, setPage] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/page/project1"}`)
-      .then(({ data }) => {
-        setPage(data);
-      });
-  }, []);
+  const page = dataPages[1];
 
   return (
     <SPage>
