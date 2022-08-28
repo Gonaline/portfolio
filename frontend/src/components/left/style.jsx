@@ -2,20 +2,21 @@ import styled from "styled-components";
 
 export default styled.section`
   background-color: var(--darkColor);
-
-  min-width: 30vw;
-  min-height: 75vh;
-  max-width: 30vw;
-  max-height: 75vh;
   width: 30vw;
   height: 75vh;
   position: fixed;
   top: 15vh;
   display: flex;
   align-items: center;
+  .arrow {
+    display: none;
+  }
+  /* .container {
+    background-color: #ffff0026;
+  } */
   p,
   h2 {
-    margin: 0 10% 0 10%;
+    margin: 0 2.5vw 0 2.5vw;
   }
   .subTitle {
     margin-bottom: 2vh;
@@ -32,11 +33,13 @@ export default styled.section`
   }
   @media screen and (max-width: 700px) {
     position: static;
-
-    width: 100%;
-    height: auto;
+    flex-direction: column;
+    width: 100vw;
+    height: 76vh;
     margin-top: 14vh;
-    align-items: flex-start;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 3vh;
 
     p {
       margin-bottom: 3vh;
@@ -45,8 +48,28 @@ export default styled.section`
       margin-bottom: 4vh;
     }
     h2,
-    p {
+    p,
+    .arrow {
       margin-left: 6vw;
+      margin-right: 6vw;
+    }
+    .arrow {
+      border: none;
+      background: none;
+      width: 25vw;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 10vh;
+
+      img {
+        width: 25vw;
+        object-fit: contain;
+      }
+    }
+    .arrow:hover {
+      background-color: yellow;
     }
   }
 `;

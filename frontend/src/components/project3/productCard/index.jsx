@@ -9,6 +9,7 @@ export default function ProductCard({
   color1,
   color4,
   darkColor,
+  whiteOpacity,
 }) {
   const navigate = useNavigate();
 
@@ -23,6 +24,7 @@ export default function ProductCard({
       color1={color1}
       color4={color4}
       darkColor={darkColor}
+      whiteOpacity={whiteOpacity}
     >
       <Link
         to={`/project3/product/${id}`}
@@ -36,6 +38,9 @@ export default function ProductCard({
           <p>+</p>
         </div>
       </Link>
+      <div className="mobileText">
+        <h3>{name}</h3>
+      </div>
     </SProductCard>
   );
 }
@@ -47,4 +52,5 @@ ProductCard.propTypes = {
   color1: PropTypes.string.isRequired,
   color4: PropTypes.string.isRequired,
   darkColor: PropTypes.string.isRequired,
+  whiteOpacity: PropTypes.string.isRequired,
 };

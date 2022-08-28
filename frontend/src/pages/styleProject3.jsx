@@ -19,6 +19,13 @@ export default styled.body`
   }
 
   @media screen and (max-width: 700px) {
+    .main{
+      position: static;
+
+      flex-direction: column;
+      justify-content: flex-start;
+    align-items: flex-start;
+    }
     .fixedRight {
     position: static;
   }

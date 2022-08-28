@@ -32,6 +32,7 @@ export default styled.body`
 
     .main {
       flex-direction: column;
+      width:100vw;
     }
   }
 `;

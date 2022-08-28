@@ -6,32 +6,30 @@ export default styled.section`
   padding-bottom: 15vh;
   display: flex;
   flex-direction: column;
-
-  .imgCollection {
-    height: 8vh;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding: 5vh 0 0 2.5vw;
-    img {
-      height: 100%;
-      margin-right: 1vw;
-    }
-  }
+  justify-content: flex-start;
+  align-items: flex-start;
 
   .list {
-    width: 85%;
+    background: ${(props) => {
+      return `${props.whiteOpacity}`;
+    }};
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     margin: auto;
-    margin-top: 4vh;
   }
 
   @media screen and (max-width: 700px) {
     width: 100vw;
-    height: 77vh;
-    padding-bottom: 9vh;
+    padding-bottom: 12vh;
+    .list {
+      width: 100%;
+      justify-content: space-around;
+    }
+    .empty {
+      width: 45%;
+    }
   }
 `;
