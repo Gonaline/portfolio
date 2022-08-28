@@ -12,6 +12,7 @@ const {
   Project3OptionByProductController,
   PageController,
   UserController,
+  AuthController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -66,8 +67,9 @@ router.delete("/page/:id", PageController.delete);
 
 router.get("/users", UserController.browse);
 router.get("/users/:id", UserController.read);
-router.post("/users", UserController.add);
 router.put("/users/:id", UserController.edit);
 router.delete("/users/:id", UserController.delete);
 
+router.post("/auth/signup", AuthController.signup);
+router.post("/auth/login", AuthController.login);
 module.exports = router;

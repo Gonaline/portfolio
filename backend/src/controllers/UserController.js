@@ -51,20 +51,6 @@ class UserController {
       });
   };
 
-  // TODO validations (length, format...)
-  static add = (req, res) => {
-    const user = req.body;
-    models.user
-      .insert(user)
-      .then(([result]) => {
-        res.status(201).send({ ...user, id: result.insertId });
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
   static delete = (req, res) => {
     models.user
       .delete(req.params.id)
