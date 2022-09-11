@@ -1,4 +1,7 @@
+const argon2 = require("argon2");
 const models = require("../models");
+
+const hashingOptions = require("../service/hashingOptions");
 
 class UserController {
   static browse = (req, res) => {
@@ -29,13 +32,10 @@ class UserController {
       });
   };
 
-  static edit = (req, res) => {
+  static edit = async (req, res) => {
     const user = req.body;
-
-    // TODO validations (length, format...)
-
+    user.password = await argon2.hash(user.password, hashingOptions);
     user.id = parseInt(req.params.id, 10);
-
     models.user
       .update(user)
       .then(([result]) => {

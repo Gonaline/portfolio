@@ -1,13 +1,8 @@
 const argon2 = require("argon2");
+const jwt = require("jsonwebtoken");
 const models = require("../models");
-const { calculateToken } = require("../service/token");
 
-const hashingOptions = {
-  type: argon2.argon2id,
-  memoryCost: 2 ** 16,
-  timeCost: 5,
-  parallelism: 1,
-};
+const hashingOptions = require("../service/hashingOptions");
 
 class AuthController {
   static signup = async (req, res) => {
@@ -18,7 +13,8 @@ class AuthController {
       .then(([result]) => {
         user.id = result.insertId;
         delete user.password;
-        res.status(201).send({ user });
+        const token = jwt.sign(user, process.env.JWT_SECRET);
+        res.status(201).send({ user, token });
       })
       .catch((err) => {
         console.error(err);
@@ -27,25 +23,8 @@ class AuthController {
   };
 
   static login = (req, res) => {
-    const { email, password } = req.body;
-    models.user.findByEmail(email).then(([result]) => {
-      const user = result[0];
-      if (!user) res.status(401).send("Invalid credentials");
-      else {
-        const hashedPassword = user.password;
-        argon2
-          .verify(hashedPassword, password, hashingOptions)
-          .then((passwordIsCorrect) => {
-            if (passwordIsCorrect) {
-              const token = calculateToken(email);
-              res.cookie("user_token", token);
-              res.send();
-            } else {
-              res.status(401).send("Invalid credentials");
-            }
-          });
-      }
-    });
+    const token = jwt.sign(req.user, process.env.JWT_SECRET);
+    res.status(200).json({ user: req.user, token });
   };
 }
 

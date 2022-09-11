@@ -1,4 +1,5 @@
 const express = require("express");
+const passport = require("passport");
 
 const {
   ItemController,
@@ -67,11 +68,33 @@ router.put("/page/:id", PageController.edit);
 router.post("/page", PageController.add);
 router.delete("/page/:id", PageController.delete);
 
-router.get("/users", UserController.browse);
-router.get("/users/:id", UserController.read);
-router.put("/users/:id", validateUser, UserController.edit);
-router.delete("/users/:id", UserController.delete);
-
 router.post("/auth/signup", validateUser, AuthController.signup);
-router.post("/auth/login", AuthController.login);
+router.post(
+  "/auth/login",
+  passport.authenticate("local", { session: false }),
+  AuthController.login
+);
+
+router.get(
+  "/users",
+  // passport.authenticate("jwt", { session: false }),
+  UserController.browse
+);
+router.get(
+  "/users/:id",
+  // passport.authenticate("jwt", { session: false }),
+  UserController.read
+);
+router.put(
+  "/users/:id",
+  validateUser,
+  // passport.authenticate("jwt", { session: false }),
+  UserController.edit
+);
+router.delete(
+  "/users/:id",
+  // passport.authenticate("jwt", { session: false }),
+  UserController.delete
+);
+
 module.exports = router;
