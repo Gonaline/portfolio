@@ -1,17 +1,35 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const passport = require("passport");
 const router = require("./router");
+require("./service/passport-strategies");
 
 const app = express();
 
 // use some application-level middlewares
+
+const corsWhitelist = [process.env.FRONTEND_URL, undefined];
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL ?? "http://localhost:3000",
+    origin: (origin, callback) => {
+      if (corsWhitelist.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
     optionsSuccessStatus: 200,
   })
 );
+
+// app.use(
+//   cors({
+//     origin: process.env.FRONTEND_URL ?? "http://localhost:3000",
+//     optionsSuccessStatus: 200,
+//   })
+// );
 
 app.use(express.json());
 
@@ -20,6 +38,8 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 // Serve REACT APP
 app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
+
+app.use(passport.initialize());
 
 // API routes
 app.use(router);

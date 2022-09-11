@@ -1,4 +1,5 @@
 const express = require("express");
+const passport = require("passport");
 
 const {
   ItemController,
@@ -11,7 +12,11 @@ const {
   Project3Colors2ByProductController,
   Project3OptionByProductController,
   PageController,
+  UserController,
+  AuthController,
 } = require("./controllers");
+
+const { validateUser } = require("./service/validator");
 
 const router = express.Router();
 
@@ -62,5 +67,34 @@ router.get("/page/:id", PageController.read);
 router.put("/page/:id", PageController.edit);
 router.post("/page", PageController.add);
 router.delete("/page/:id", PageController.delete);
+
+router.post("/auth/signup", validateUser, AuthController.signup);
+router.post(
+  "/auth/login",
+  passport.authenticate("local", { session: false }),
+  AuthController.login
+);
+
+router.get(
+  "/users",
+  // passport.authenticate("jwt", { session: false }),
+  UserController.browse
+);
+router.get(
+  "/users/:id",
+  // passport.authenticate("jwt", { session: false }),
+  UserController.read
+);
+router.put(
+  "/users/:id",
+  validateUser,
+  // passport.authenticate("jwt", { session: false }),
+  UserController.edit
+);
+router.delete(
+  "/users/:id",
+  // passport.authenticate("jwt", { session: false }),
+  UserController.delete
+);
 
 module.exports = router;
